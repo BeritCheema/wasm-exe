@@ -11,8 +11,10 @@
   "scripts": {
     "test": "node --test",
     "dev": "node scripts/serve.js",
-    "check": "node --check src/index.js && node --check web/app.js && node --check web/backend-bridge.js && node --check scripts/serve.js && node --check scripts/setup-backend.js",
-    "setup:backend": "node scripts/setup-backend.js"
+    "check": "node --check src/index.js && node --check web/app.js && node --check web/backend-bridge.js && node --check scripts/serve.js && node --check scripts/setup-backend.js && node --check scripts/patch-launcher.js && node --check scripts/setup-blender.js",
+    "setup:backend": "node scripts/setup-backend.js",
+    "setup:backend64": "node scripts/setup-backend.js --64",
+    "setup:blender": "node scripts/setup-blender.js"
   },
   "engines": {
     "node": ">=22"

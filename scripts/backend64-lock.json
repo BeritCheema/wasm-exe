@@ -1,0 +1,166 @@
+{
+  "repository": "https://github.com/bassdrum4/windowsappplayer",
+  "commit": "97c6294d84f7008fe8f96ab2ee686d7eab25b923",
+  "files": [
+    {
+      "path": "64/boxedwine-shell.js",
+      "sha256": "74fa7a9d6b98aaf5aa0c508a2c979a56bfeb69935b4f5f0c15b5f77720535e71"
+    },
+    {
+      "path": "64/boxedwine.css",
+      "sha256": "fd7782e90131d31d1bb90fce4cc7188c27dadb41f67b1f36a1005d80d759b3c6"
+    },
+    {
+      "path": "64/boxedwine64.js",
+      "sha256": "eb15127b0f01821b788821d3519e8c51a4de7b22fd41cefbbf530f47a0e84fd6"
+    },
+    {
+      "path": "64/boxedwine64.wasm",
+      "sha256": "7850a5095a4787b915670e0e2c4d94d66e7358ea7d8c5dc90ccc01522c42fdf6"
+    },
+    {
+      "path": "64/coi-serviceworker.js",
+      "sha256": "35e88c10cc612c5189c8c302365d3a608abd796594c4c80c37c927ae9141dd9c"
+    },
+    {
+      "path": "64/glibc-rootfs64.zip.manifest.json",
+      "sha256": "0f693dd861faf77f5a4e73541bada6d589d9c00c8d7b83222acb380b1d5a5d90"
+    },
+    {
+      "path": "64/glibc-rootfs64.zip.part000",
+      "sha256": "5fb0da757b64d398ca6e9cb831b2530620dafa19266b7c1edda76b28179ae867"
+    },
+    {
+      "path": "64/glibc-rootfs64.zip.part001",
+      "sha256": "7bcc64c13642d265f092a540a1056c92483d415e591b1674b8db5189e0e06151"
+    },
+    {
+      "path": "64/index.html",
+      "sha256": "77ac3ecdc98406e212d271534290fb1f5b5e30d852ce01de1de6aebbe36cf6b1"
+    },
+    {
+      "path": "64/prefix64.zip.manifest.json",
+      "sha256": "44ebfd8ccb11ca1738f05f3b4a7ac59a338775a1f5698e5e29db3e6d4db94c4f"
+    },
+    {
+      "path": "64/prefix64.zip.part000",
+      "sha256": "3b15a5373e9312dedcbaedd2fe5c7d914cd2f3c31b6439b0da66175650f6dae6"
+    },
+    {
+      "path": "64/prefix64.zip.part001",
+      "sha256": "98c3073c96972e62cd3293b64d7830973a0407bb110a03cc4386115b0b9d0a30"
+    },
+    {
+      "path": "64/prefix64.zip.part002",
+      "sha256": "b2ca2d584cf6d37b57e4e02a5e9da7f0a5b08edbde33a54419fcb877c75520bb"
+    },
+    {
+      "path": "64/wine64-launcher.js",
+      "sha256": "c7030d4f838749574e1505d366ac7d092a5d3f6c810e2c01c5463028150e787e"
+    },
+    {
+      "path": "64/wine64.zip.manifest.json",
+      "sha256": "d895020e19d3aeaa08b3337765b15f257c1b1b534a066d6ca2521a92855a17cd"
+    },
+    {
+      "path": "64/wine64.zip.part000",
+      "sha256": "37ca164e0db3d575e96da3902c7c3d48661ab616cd4a92e08c98acf143bf9262"
+    },
+    {
+      "path": "64/wine64.zip.part001",
+      "sha256": "8ce41ea8341de3078dc66e5a02fd2ae4af62002193e444bb27157eb170897be8"
+    },
+    {
+      "path": "64/wine64.zip.part002",
+      "sha256": "2c57397b321c975ecbd418393987edae688d9fc8ac564dd109c4f99fea9b8159"
+    },
+    {
+      "path": "64/wine64.zip.part003",
+      "sha256": "d8b0dd975458ee81093c980354724d9eb672cd24c299c146f4fa0a48c2e4d922"
+    },
+    {
+      "path": "64/wine64.zip.part004",
+      "sha256": "c7b12c13e3e96c41f54b878f3be9cb00eec6d3b573c5839bb8c8fb6c4c144797"
+    },
+    {
+      "path": "64/wine64.zip.part005",
+      "sha256": "4707e747812dd69bc708b581cf0245462b91a9b141d2a5ab29f0800725b42c43"
+    },
+    {
+      "path": "64/wine64.zip.part006",
+      "sha256": "147b8067186c82c8b6484ee3ba161c0ee71ce5274dfbf5dcecde6d103388a776"
+    },
+    {
+      "path": "64/wine64.zip.part007",
+      "sha256": "167c6a2342152611654b635cd67bb15d9a4e54497acf3378cf7e9cf831a98adb"
+    },
+    {
+      "path": "64/wine64.zip.part008",
+      "sha256": "6f6893c52b9f8749479d823be2ecc270a3b4bdf81d8e9cf238ea7b5bce442c36"
+    },
+    {
+      "path": "64/wine64.zip.part009",
+      "sha256": "dc1e2c2c3e694947d3a62f9b299ba3a3a85c3d4645ff4685d7edc8c0b373da44"
+    },
+    {
+      "path": "64/wine64.zip.part010",
+      "sha256": "9722e19b7e49caf667648f4a5ff08b69cdcbc2947a854a6e813bd08b39cb98c6"
+    },
+    {
+      "path": "64/wine64.zip.part011",
+      "sha256": "9f75a6ce76abb247852fd4da3a92f14d357d62b2e6d134df24135a241bb3399e"
+    },
+    {
+      "path": "64/wine64.zip.part012",
+      "sha256": "efc2e72e2f63d243fa9f3cfd6738d616ace5baeabd94b3df410f9a663172f566"
+    },
+    {
+      "path": "64/wine64.zip.part013",
+      "sha256": "b494172cf4e60de07b6b8faeb26e97305dc398a1e3b09e4cc5657c215dd1e853"
+    },
+    {
+      "path": "64/wine64.zip.part014",
+      "sha256": "ca6175c5e81334d62c6065e1db3ad9c9d5de93d1fae2b19a9f41e67fdb0db8cb"
+    },
+    {
+      "path": "64/wine64.zip.part015",
+      "sha256": "3c3b0eead91edbbfc96ea51957e41bbf67c6740e80e05beac92b69fb023b6d9e"
+    },
+    {
+      "path": "64/wine64.zip.part016",
+      "sha256": "a6f6c8d31acc1458a8f3405dcf77e04ed2a9ebd4cec263ecc490750af713c8fa"
+    },
+    {
+      "path": "64/wine64.zip.part017",
+      "sha256": "eca361a6ccc6c46b96e68f232fd1b032dd1dcd92208a1bb9858f4b04cbf47b09"
+    },
+    {
+      "path": "64/wine64.zip.part018",
+      "sha256": "32ba77a3be2e8fa230cdca94112c4ca19025498f76b1a7dd9148478e363c2adc"
+    },
+    {
+      "path": "64/wine64.zip.part019",
+      "sha256": "d8c013660bc82d72615449ea11065fdf0a3715cc032e0b241f42b28cb99b0291"
+    },
+    {
+      "path": "64/wine64.zip.part020",
+      "sha256": "275e8e79587baaf619b26d4d339ef471fa81f76ba09c95440bc9c1fee724a0dc"
+    },
+    {
+      "path": "64/wine64.zip.part021",
+      "sha256": "3b02263eb3a949057539ceac8d4e0ce9cc9e7d804873f0fe7ca2538bf12b4085"
+    },
+    {
+      "path": "64/wine64.zip.part022",
+      "sha256": "2c6e6eb29d350dac2d9bbea415550128ff1fbc90ecabe39679e7dbbf22aa85ca"
+    },
+    {
+      "path": "64/wine64.zip.part023",
+      "sha256": "3b2bf1dbb7ac4cf903dc8809af0ef2d102d5ce28482610b14f97f5909e18430c"
+    },
+    {
+      "path": "64/wine64.zip.part024",
+      "sha256": "dc2cca3228c5414e49ba50c63dc2767de0464cbe87c49f12aea5f2cde853b473"
+    }
+  ]
+}

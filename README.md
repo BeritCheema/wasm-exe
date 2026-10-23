@@ -34,6 +34,14 @@ npm run dev
 
 Open http://127.0.0.1:5173/backend/ and click **Try demo (7-Zip)**. This launches the original Windows file manager through the external Boxedwine/Wine backend. It does not use the custom arithmetic compiler. Files remain local; no game binaries are included.
 
+## GTA V / 64-bit preparation
+
+See [GTA V launch status](docs/gta-v-status.md) for blockers and the optional 64-bit baseline (`npm run setup:backend64`). GTA V has not been launched; the backend lacks the required graphics/authentication integration.
+
+## Blender Windows test
+
+An official Blender 2.79b x64 archive can now be mounted with all its dependencies. Run `npm run setup:backend64`, `npm run setup:blender`, then `npm run dev`. The lab has separate version-check and GUI launch links. See [Blender test details](docs/blender-test.md); **startup is currently blocked by an unsupported instruction in the external x64 emulator**. No working Blender UI was reached; current Blender versions are not tested.
+
 ## Package API
 
 ```js

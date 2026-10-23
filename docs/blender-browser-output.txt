@@ -1,0 +1,1517 @@
+Browser tab: 1177195589, Title: "BoxedWine 26.0.0 516KB", URL: "http://127.0.0.1:5173/backend/64/?chunked=1&fixture=blender&session=0&persist=0&p=Z%3A%5Cblender-2.79b-windows64%5Cblender.exe%20--version".
+0 AXWebArea BoxedWine 26.0.0 516KB, URL: 127.0.0.1:5173/backend/64/?chunked=1&fixture=blender&session=0&persist=0&p=Z%3A%5Cblender-2.79b-windows64%5Cblender.exe%20--version
+	1 heading wine64 · WebAssembly (64-bit Boxedwine), Value: 1
+		2 text wine64 · WebAssembly (64-bit Boxedwine)
+	3 container loading
+		40 text Running...
+	6 container apps
+		7 text APPS
+		8 checkbox 📝 Notepad, Value: 0
+		9 checkbox 📄 WordPad, Value: 0
+		10 checkbox 🔣 HxD (hex), Value: 0
+		11 checkbox 🕑 Clock, Value: 0
+		12 checkbox ⚙️ winecfg, Value: 0
+		13 checkbox 🗂️ Files, Value: 0
+		14 text GRAPHICS
+		15 checkbox 🧊 glcube, Value: 0
+		16 text GAMES
+		17 checkbox 💣 Minesweeper, Value: 0
+		18 checkbox 🐍 Snake, Value: 0
+		19 checkbox 🟦 Tetris, Value: 0
+		20 checkbox 👹 DOOM, Value: 0
+		21 text EXPERIMENTAL
+		22 checkbox 📊 Task Mgr, Value: 0
+		23 checkbox 🧾 regedit, Value: 0
+		24 checkbox 🎛️ control, Value: 0
+		25 checkbox 🪟 explorer, Value: 0
+		26 checkbox 🌐 IE, Value: 0
+		27 checkbox 🔎 oleview, Value: 0
+		28 text first launch downloads the rootfs once; later switches are instant (no reload). Builtins (Notepad…Minesweeper) add no download.  Experimental  apps may not render yet.
+	29 container toolbar
+		30 button ⤓ Download my files
+		31 text zips your saved files (Z:\home\username + Documents/Desktop) — save from the app first
+		32 button ⬆ Run my own .exe
+		33 text runs a Windows .exe you choose — best with a single  portable  Win32 app (not installers, .NET, or D3D games)
+		34 button ⧉ Copy from app
+		35 button ⧉ Paste to app
+		36 text bridge the app's clipboard with your computer's — copy/select in the app first, or copy on your computer then paste inside the app
+	37 text entry area ID: output, Value: Starting ...
+Command line arguments: "./this.program" "-root" "/root" "-zip" "glibc-rootfs64.zip" "-zip" "wine64.zip" "-zip" "prefix64.zip" "-zip" "blender-2.79b-windows64.zip" "-w" "/blender-2.79b-windows64" "-env" "HOME=/home/username" "-env" "WINEPREFIX=/home/username/.wine" "-env" "WINESERVER=/usr/lib/wine/wineserver64" "-env" "WINEDLLPATH=/usr/lib/x86_64-linux-gnu/wine" "/usr/lib/wine/wine64" "Z:\blender-2.79b-windows64\blender.exe" "--version"
+Using root directory: /root
+Using zip file system: glibc-rootfs64.zip
+Using zip file system: wine64.zip
+Using zip file system: prefix64.zip
+Using zip file system: blender-2.79b-windows64.zip
+Created root directory: /root
+Loaded glibc-rootfs64.zip in 58 ms
+Loaded wine64.zip in 714 ms
+Loaded prefix64.zip in 141 ms
+Loaded blender-2.79b-windows64.zip in 2816 ms
+Launching "/usr/lib/wine/wine64" "Z:\blender-2.79b-windows64\blender.exe" "--version" 
+loadProgram64: entry=0x7d001380 phoff=0x40 phnum=13 segments=4 interp=/lib64/ld-linux-x86-64.so.2 pie=0
+loadProgram64: load range [0x7d000000, 0x7d0040d8) span=16600 bytes
+loadProgram64: PT_DYNAMIC vaddr=0x7d003de0 memsz=480
+loadProgram64[exe]:   mapped seg vaddr=0x7d000000 len=0x1000 prot=0x1 filesz=0xc20
+loadProgram64[exe]:   mapped seg vaddr=0x7d001000 len=0x1000 prot=0x5 filesz=0x501
+loadProgram64[exe]:   mapped seg vaddr=0x7d002000 len=0x1000 prot=0x1 filesz=0x21c
+loadProgram64[exe]:   mapped seg vaddr=0x7d003000 len=0x2000 prot=0x3 filesz=0x2d0
+loadProgram64[exe]: RELA table at 0x7d000980, 10 entries (entsize=24)
+loadProgram64[exe]: applied 3 RELATIVE relocs (deferred 7 symbol-bound)
+loadProgram64: PT_GNU_RELRO 0x7d003000..0x7d004000 -> RO
+loadProgram64: exe RIP=0x7d001380 (pages mapped: 5)
+loadProgram64[interp]:   mapped seg vaddr=0x7ffff7fce000 len=0x1000 prot=0x1 filesz=0xd58
+loadProgram64[interp]:   mapped seg vaddr=0x7ffff7fcf000 len=0x26000 prot=0x5 filesz=0x25111
+loadProgram64[interp]:   mapped seg vaddr=0x7ffff7ff5000 len=0xa000 prot=0x1 filesz=0x9c7c
+loadProgram64[interp]:   mapped seg vaddr=0x7ffff7fff000 len=0x4000 prot=0x3 filesz=0x2810
+loadProgram64[interp]: RELA table at 0x7ffff7fcecc8, 1 entries (entsize=24)
+loadProgram64[interp]: applied 0 RELATIVE relocs (deferred 1 symbol-bound)
+loadProgram64: interp '/lib64/ld-linux-x86-64.so.2' mapped at base 0x7ffff7fce000, RIP=0x7ffff7fe8b70
+loadProgram64: stack built, RSP=0x7fffffffdcd0 argc=3 envc=12 auxc=16
+wine64session: context captured (cwd=/blender-2.79b-windows64 uid=1 bootPid=10)
+RIPSAMPLE: sampler thread started (threshold=2000000 window=4096 hb=0)
+sys_openat64: open('/lib/x86_64-linux-gnu/tls/x86_64/libc.so.6') -> -2
+sys_openat64: open('/lib/x86_64-linux-gnu/tls/libc.so.6') -> -2
+sys_openat64: open('/lib/x86_64-linux-gnu/x86_64/libc.so.6') -> -2
+DLLOPEN pid=10 OPEN '/usr/lib/wine/../x86_64-linux-gnu/wine/x86_64-unix/ntdll.so' -> fd 3
+sys_execve64: pid=10 path='/usr/lib/wine/wine64-preloader' argv0='/usr/lib/wine/wine64-preloader' argc=4 envc=14
+sys_execve64:   env WINELOADER=/usr/lib/wine/wine64
+sys_execve64: pid=10 path='/usr/lib/wine/wine64' argv0='/usr/lib/wine/wine64' argc=3 envc=14
+sys_execve64:   env WINELOADER=/usr/lib/wine/wine64
+Showing Window
+WARNING: using emscripten GL immediate mode emulation. This is very limited in what it supports
+loadProgram64: entry=0x7d001380 phoff=0x40 phnum=13 segments=4 interp=/lib64/ld-linux-x86-64.so.2 pie=0
+loadProgram64: load range [0x7d000000, 0x7d0040d8) span=16600 bytes
+loadProgram64: PT_DYNAMIC vaddr=0x7d003de0 memsz=480
+loadProgram64[exe]:   mapped seg vaddr=0x7d000000 len=0x1000 prot=0x1 filesz=0xc20
+loadProgram64[exe]:   mapped seg vaddr=0x7d001000 len=0x1000 prot=0x5 filesz=0x501
+loadProgram64[exe]:   mapped seg vaddr=0x7d002000 len=0x1000 prot=0x1 filesz=0x21c
+loadProgram64[exe]:   mapped seg vaddr=0x7d003000 len=0x2000 prot=0x3 filesz=0x2d0
+loadProgram64[exe]: RELA table at 0x7d000980, 10 entries (entsize=24)
+loadProgram64[exe]: applied 3 RELATIVE relocs (deferred 7 symbol-bound)
+loadProgram64: PT_GNU_RELRO 0x7d003000..0x7d004000 -> RO
+loadProgram64: exe RIP=0x7d001380 (pages mapped: 5)
+loadProgram64[interp]:   mapped seg vaddr=0x7ffff7fce000 len=0x1000 prot=0x1 filesz=0xd58
+loadProgram64[interp]:   mapped seg vaddr=0x7ffff7fcf000 len=0x26000 prot=0x5 filesz=0x25111
+loadProgram64[interp]:   mapped seg vaddr=0x7ffff7ff5000 len=0xa000 prot=0x1 filesz=0x9c7c
+loadProgram64[interp]:   mapped seg vaddr=0x7ffff7fff000 len=0x4000 prot=0x3 filesz=0x2810
+loadProgram64[interp]: RELA table at 0x7ffff7fcecc8, 1 entries (entsize=24)
+loadProgram64[interp]: applied 0 RELATIVE relocs (deferred 1 symbol-bound)
+loadProgram64: interp '/lib64/ld-linux-x86-64.so.2' mapped at base 0x7ffff7fce000, RIP=0x7ffff7fe8b70
+loadProgram64: stack built, RSP=0x7fffffffdc90 argc=3 envc=14 auxc=16
+sys_openat64: open('/lib/x86_64-linux-gnu/tls/x86_64/libc.so.6') -> -2
+sys_openat64: open('/lib/x86_64-linux-gnu/tls/libc.so.6') -> -2
+sys_openat64: open('/lib/x86_64-linux-gnu/x86_64/libc.so.6') -> -2
+DLLOPEN pid=10 OPEN '/usr/lib/wine/../x86_64-linux-gnu/wine/x86_64-unix/ntdll.so' -> fd 3
+sys_execve64: pid=12 path='/usr/lib/wine/wineserver' argv0='/usr/lib/wine/wineserver' argc=1 envc=14
+sys_execve64:   env WINELOADER=/usr/lib/wine/wine64
+Interpreter not found: /bin/sh
+sys_execve64: pid=12 path='/usr/lib/wine/wineserver64' argv0='/usr/lib/wine/wineserver64' argc=1 envc=14
+sys_execve64:   env WINELOADER=/usr/lib/wine/wine64
+loadProgram64: entry=0x13c90 phoff=0x40 phnum=13 segments=4 interp=/lib64/ld-linux-x86-64.so.2 pie=1
+loadProgram64: load range [0x0, 0x98910) span=624912 bytes
+loadProgram64: PT_DYNAMIC vaddr=0x96de0 memsz=480
+loadProgram64[exe]:   mapped seg vaddr=0x400000000 len=0x13000 prot=0x1 filesz=0x120b0
+loadProgram64[exe]:   mapped seg vaddr=0x400013000 len=0x5d000 prot=0x5 filesz=0x5c749
+loadProgram64[exe]:   mapped seg vaddr=0x400070000 len=0x20000 prot=0x1 filesz=0x1fdc0
+loadProgram64[exe]:   mapped seg vaddr=0x400090000 len=0x9000 prot=0x3 filesz=0x72c0
+loadProgram64[exe]: RELA table at 0x400001820, 2687 entries (entsize=24)
+loadProgram64[exe]: applied 2680 RELATIVE relocs (deferred 7 symbol-bound)
+loadProgram64: PT_GNU_RELRO 0x400090000..0x400097000 -> RO
+loadProgram64: exe RIP=0x400013c90 (pages mapped: 153)
+loadProgram64[interp]:   mapped seg vaddr=0x7ffff7fce000 len=0x1000 prot=0x1 filesz=0xd58
+loadProgram64[interp]:   mapped seg vaddr=0x7ffff7fcf000 len=0x26000 prot=0x5 filesz=0x25111
+loadProgram64[interp]:   mapped seg vaddr=0x7ffff7ff5000 len=0xa000 prot=0x1 filesz=0x9c7c
+loadProgram64[interp]:   mapped seg vaddr=0x7ffff7fff000 len=0x4000 prot=0x3 filesz=0x2810
+loadProgram64[interp]: RELA table at 0x7ffff7fcecc8, 1 entries (entsize=24)
+loadProgram64[interp]: applied 0 RELATIVE relocs (deferred 1 symbol-bound)
+loadProgram64: interp '/lib64/ld-linux-x86-64.so.2' mapped at base 0x7ffff7fce000, RIP=0x7ffff7fe8b70
+loadProgram64: stack built, RSP=0x7fffffffdcd0 argc=1 envc=14 auxc=16
+sys_openat64: open('/lib/x86_64-linux-gnu/tls/x86_64/libc.so.6') -> -2
+sys_openat64: open('/lib/x86_64-linux-gnu/tls/libc.so.6') -> -2
+sys_openat64: open('/lib/x86_64-linux-gnu/x86_64/libc.so.6') -> -2
+CPU64: exit_group syscall, status=0  pid=12 exe='/usr/lib/wine/wineserver64' cmd='/usr/lib/wine/wineserver64'
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x70010a7c0 libc.so.6+0xe47c0
+D3DBT slot=2 pid=14 tid=15 rip=0x40003fec4 (unmapped) @0x40003fec4
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x70010a7c0 libc.so.6+0xe47c0
+D3DBT slot=2 pid=14 tid=15 rip=0x4000663e4 (unmapped) @0x4000663e4
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x70010a7c0 libc.so.6+0xe47c0
+D3DBT slot=2 pid=14 tid=15 rip=0x400066458 (unmapped) @0x400066458
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x70010a7c0 libc.so.6+0xe47c0
+D3DBT slot=2 pid=14 tid=15 rip=0x400066572 (unmapped) @0x400066572
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x70010a7c0 libc.so.6+0xe47c0
+D3DBT slot=2 pid=14 tid=15 rip=0x700076077 (unmapped) @0x700076077
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x70010a7c0 libc.so.6+0xe47c0
+D3DBT slot=2 pid=14 tid=15 rip=0x700098a2d (unmapped) @0x700098a2d
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x70010a7c0 libc.so.6+0xe47c0
+D3DBT slot=2 pid=14 tid=15 rip=0x4000403cc (unmapped) @0x4000403cc
+sys_openat64: open('/sys/devices/system/cpu/cpu0/topology/physical_package_id') -> -2
+sys_openat64: open('/sys/devices/system/cpu/cpu0/topology/thread_siblings') -> -2
+sys_openat64: open('/sys/devices/system/cpu/cpu0/topology/thread_siblings_list') -> -2
+sys_openat64: open('/sys/devices/system/cpu/cpu0/cache/index0/shared_cpu_map') -> -2
+sys_openat64: open('/sys/devices/system/cpu/cpu0/cache/index1/shared_cpu_map') -> -2
+sys_openat64: open('/sys/devices/system/cpu/cpu0/cache/index2/shared_cpu_map') -> -2
+sys_openat64: open('/sys/devices/system/cpu/cpu0/cache/index3/shared_cpu_map') -> -2
+sys_openat64: open('/sys/devices/system/node/online') -> -2
+DLLOPEN pid=10 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/libwine.so.1' -> fd 8
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/wineboot.exe' -> fd 26
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x7000d4353 libc.so.6+0xae353
+D3DBT slot=2 pid=14 tid=15 rip=0x700108ef3 (unmapped) @0x700108ef3
+CPU64: exit_group syscall, status=0  pid=16 exe='/usr/lib/wine/wine64' cmd='/usr/lib/wine/wine64Z:\blender-2.79b-windows64\blender.exe--version'
+sys_execve64: pid=18 path='/usr/lib/wine/wine64-preloader' argv0='/usr/lib/wine/wine64-preloader' argc=4 envc=16
+sys_execve64:   env WINELOADER=/usr/lib/wine/wine64
+sys_execve64: pid=18 path='/usr/lib/wine/wine64' argv0='/usr/lib/wine/wine64' argc=3 envc=16
+sys_execve64:   env WINELOADER=/usr/lib/wine/wine64
+loadProgram64: entry=0x7d001380 phoff=0x40 phnum=13 segments=4 interp=/lib64/ld-linux-x86-64.so.2 pie=0
+loadProgram64: load range [0x7d000000, 0x7d0040d8) span=16600 bytes
+loadProgram64: PT_DYNAMIC vaddr=0x7d003de0 memsz=480
+loadProgram64[exe]:   mapped seg vaddr=0x7d000000 len=0x1000 prot=0x1 filesz=0xc20
+loadProgram64[exe]:   mapped seg vaddr=0x7d001000 len=0x1000 prot=0x5 filesz=0x501
+loadProgram64[exe]:   mapped seg vaddr=0x7d002000 len=0x1000 prot=0x1 filesz=0x21c
+loadProgram64[exe]:   mapped seg vaddr=0x7d003000 len=0x2000 prot=0x3 filesz=0x2d0
+loadProgram64[exe]: RELA table at 0x7d000980, 10 entries (entsize=24)
+loadProgram64[exe]: applied 3 RELATIVE relocs (deferred 7 symbol-bound)
+loadProgram64: PT_GNU_RELRO 0x7d003000..0x7d004000 -> RO
+loadProgram64: exe RIP=0x7d001380 (pages mapped: 5)
+loadProgram64[interp]:   mapped seg vaddr=0x7ffff7fce000 len=0x1000 prot=0x1 filesz=0xd58
+loadProgram64[interp]:   mapped seg vaddr=0x7ffff7fcf000 len=0x26000 prot=0x5 filesz=0x25111
+loadProgram64[interp]:   mapped seg vaddr=0x7ffff7ff5000 len=0xa000 prot=0x1 filesz=0x9c7c
+loadProgram64[interp]:   mapped seg vaddr=0x7ffff7fff000 len=0x4000 prot=0x3 filesz=0x2810
+loadProgram64[interp]: RELA table at 0x7ffff7fcecc8, 1 entries (entsize=24)
+loadProgram64[interp]: applied 0 RELATIVE relocs (deferred 1 symbol-bound)
+loadProgram64: interp '/lib64/ld-linux-x86-64.so.2' mapped at base 0x7ffff7fce000, RIP=0x7ffff7fe8b70
+loadProgram64: stack built, RSP=0x7fffffffdc50 argc=3 envc=16 auxc=16
+sys_openat64: open('/lib/x86_64-linux-gnu/tls/x86_64/libc.so.6') -> -2
+sys_openat64: open('/lib/x86_64-linux-gnu/tls/libc.so.6') -> -2
+sys_openat64: open('/lib/x86_64-linux-gnu/x86_64/libc.so.6') -> -2
+DLLOPEN pid=18 OPEN '/usr/lib/wine/../x86_64-linux-gnu/wine/x86_64-unix/ntdll.so' -> fd 3
+sys_openat64: open('/sys/devices/system/cpu/cpu0/topology/physical_package_id') -> -2
+sys_openat64: open('/sys/devices/system/cpu/cpu0/topology/thread_siblings') -> -2
+sys_openat64: open('/sys/devices/system/cpu/cpu0/topology/thread_siblings_list') -> -2
+sys_openat64: open('/sys/devices/system/cpu/cpu0/cache/index0/shared_cpu_map') -> -2
+sys_openat64: open('/sys/devices/system/cpu/cpu0/cache/index1/shared_cpu_map') -> -2
+sys_openat64: open('/sys/devices/system/cpu/cpu0/cache/index2/shared_cpu_map') -> -2
+sys_openat64: open('/sys/devices/system/cpu/cpu0/cache/index3/shared_cpu_map') -> -2
+sys_openat64: open('/sys/devices/system/node/online') -> -2
+DLLOPEN pid=18 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/libwine.so.1' -> fd 5
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/wineboot.exe' -> fd 31
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/wineboot.exe' -> fd 31
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/ntdll.dll' -> fd 31
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/apisetschema.dll' -> fd 31
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/kernel32.dll' -> fd 31
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/kernel32.dll' -> fd 31
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/kernelbase.dll' -> fd 31
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/kernelbase.dll' -> fd 31
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/advapi32.dll' -> fd 31
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/advapi32.dll' -> fd 31
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/msvcrt.dll' -> fd 31
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/msvcrt.dll' -> fd 31
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/sechost.dll' -> fd 31
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/sechost.dll' -> fd 31
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/ucrtbase.dll' -> fd 31
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/ucrtbase.dll' -> fd 31
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/ws2_32.dll' -> fd 31
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/ws2_32.dll' -> fd 31
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=2 pid=14 tid=15 rip=0x700108ef3 (unmapped) @0x700108ef3
+D3DBT slot=3 pid=18 tid=19 rip=0x7000fd104 libc.so.6+0xd7104
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/tzres.dll' -> fd 31
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/tzres.dll' -> fd 31
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/tzres.dll' -> fd 48
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/tzres.dll' -> fd 31
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/tzres.dll' -> fd 31
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/tzres.dll' -> fd 48
+DLLOPEN pid=18 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/ws2_32.so' -> fd 10
+sys_openat64: open('/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq') -> -2
+sys_openat64: open('/sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq') -> -2
+sys_openat64: open('/sys/class/dmi/id/bios_vendor') -> -2
+sys_openat64: open('/sys/class/dmi/id/bios_version') -> -2
+sys_openat64: open('/sys/class/dmi/id/bios_date') -> -2
+sys_openat64: open('/sys/class/dmi/id/sys_vendor') -> -2
+sys_openat64: open('/sys/class/dmi/id/product_name') -> -2
+sys_openat64: open('/sys/class/dmi/id/product_version') -> -2
+sys_openat64: open('/sys/class/dmi/id/product_serial') -> -2
+sys_openat64: open('/var/lib/dbus/machine-id') -> -2
+sys_openat64: open('/sys/class/dmi/id/product_sku') -> -2
+sys_openat64: open('/sys/class/dmi/id/product_family') -> -2
+sys_openat64: open('/sys/class/dmi/id/board_vendor') -> -2
+sys_openat64: open('/sys/class/dmi/id/board_name') -> -2
+sys_openat64: open('/sys/class/dmi/id/board_version') -> -2
+sys_openat64: open('/sys/class/dmi/id/board_serial') -> -2
+sys_openat64: open('/sys/class/dmi/id/board_asset_tag') -> -2
+sys_openat64: open('/sys/class/dmi/id/chassis_vendor') -> -2
+sys_openat64: open('/sys/class/dmi/id/chassis_type') -> -2
+sys_openat64: open('/sys/class/dmi/id/chassis_version') -> -2
+sys_openat64: open('/sys/class/dmi/id/chassis_serial') -> -2
+sys_openat64: open('/sys/class/dmi/id/chassis_tag') -> -2
+sys_openat64: open('/sys/class/dmi/id/bios_vendor') -> -2
+sys_openat64: open('/sys/class/dmi/id/bios_version') -> -2
+sys_openat64: open('/sys/class/dmi/id/bios_date') -> -2
+sys_openat64: open('/sys/class/dmi/id/sys_vendor') -> -2
+sys_openat64: open('/sys/class/dmi/id/product_name') -> -2
+sys_openat64: open('/sys/class/dmi/id/product_version') -> -2
+sys_openat64: open('/sys/class/dmi/id/product_serial') -> -2
+sys_openat64: open('/var/lib/dbus/machine-id') -> -2
+sys_openat64: open('/sys/class/dmi/id/product_sku') -> -2
+sys_openat64: open('/sys/class/dmi/id/product_family') -> -2
+sys_openat64: open('/sys/class/dmi/id/board_vendor') -> -2
+sys_openat64: open('/sys/class/dmi/id/board_name') -> -2
+sys_openat64: open('/sys/class/dmi/id/board_version') -> -2
+sys_openat64: open('/sys/class/dmi/id/board_serial') -> -2
+sys_openat64: open('/sys/class/dmi/id/board_asset_tag') -> -2
+sys_openat64: open('/sys/class/dmi/id/chassis_vendor') -> -2
+sys_openat64: open('/sys/class/dmi/id/chassis_type') -> -2
+sys_openat64: open('/sys/class/dmi/id/chassis_version') -> -2
+sys_openat64: open('/sys/class/dmi/id/chassis_serial') -> -2
+sys_openat64: open('/sys/class/dmi/id/chassis_tag') -> -2
+sys_openat64: open('/etc/nsswitch.conf') -> -2
+sys_openat64: open('/etc/host.conf') -> -2
+sys_openat64: open('/etc/resolv.conf') -> -2
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=2 pid=14 tid=15 rip=0x700108ef3 (unmapped) @0x700108ef3
+D3DBT slot=3 pid=18 tid=19 rip=0x7000fc230 libc.so.6+0xd6230
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=2 pid=14 tid=15 rip=0x400066c07 (unmapped) @0x400066c07
+D3DBT slot=3 pid=18 tid=19 rip=0x7000fc230 libc.so.6+0xd6230
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=2 pid=14 tid=15 rip=0x4000409cf (unmapped) @0x4000409cf
+D3DBT slot=3 pid=18 tid=19 rip=0x7000fc230 libc.so.6+0xd6230
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=2 pid=14 tid=15 rip=0x70005cdd2 (unmapped) @0x70005cdd2
+D3DBT slot=3 pid=18 tid=19 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=2 pid=14 tid=15 rip=0x7000f8350 (unmapped) @0x7000f8350
+D3DBT slot=3 pid=18 tid=19 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=2 pid=14 tid=15 rip=0x7000f8350 (unmapped) @0x7000f8350
+D3DBT slot=3 pid=18 tid=19 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=2 pid=14 tid=15 rip=0x70005c769 (unmapped) @0x70005c769
+D3DBT slot=3 pid=18 tid=19 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=2 pid=14 tid=15 rip=0x70005d080 (unmapped) @0x70005d080
+D3DBT slot=3 pid=18 tid=19 rip=0x7000f82ad libc.so.6+0xd22ad
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/services.exe' -> fd 26
+CPU64: exit_group syscall, status=0  pid=20 exe='/usr/lib/wine/wine64' cmd='/usr/lib/wine/wine64C:\windows\system32\wineboot.exe--init'
+sys_execve64: pid=22 path='/usr/lib/wine/wine64-preloader' argv0='/usr/lib/wine/wine64-preloader' argc=3 envc=16
+sys_execve64:   env WINELOADER=/usr/lib/wine/wine64
+sys_execve64: pid=22 path='/usr/lib/wine/wine64' argv0='/usr/lib/wine/wine64' argc=2 envc=16
+sys_execve64:   env WINELOADER=/usr/lib/wine/wine64
+loadProgram64: entry=0x7d001380 phoff=0x40 phnum=13 segments=4 interp=/lib64/ld-linux-x86-64.so.2 pie=0
+loadProgram64: load range [0x7d000000, 0x7d0040d8) span=16600 bytes
+loadProgram64: PT_DYNAMIC vaddr=0x7d003de0 memsz=480
+loadProgram64[exe]:   mapped seg vaddr=0x7d000000 len=0x1000 prot=0x1 filesz=0xc20
+loadProgram64[exe]:   mapped seg vaddr=0x7d001000 len=0x1000 prot=0x5 filesz=0x501
+loadProgram64[exe]:   mapped seg vaddr=0x7d002000 len=0x1000 prot=0x1 filesz=0x21c
+loadProgram64[exe]:   mapped seg vaddr=0x7d003000 len=0x2000 prot=0x3 filesz=0x2d0
+loadProgram64[exe]: RELA table at 0x7d000980, 10 entries (entsize=24)
+loadProgram64[exe]: applied 3 RELATIVE relocs (deferred 7 symbol-bound)
+loadProgram64: PT_GNU_RELRO 0x7d003000..0x7d004000 -> RO
+loadProgram64: exe RIP=0x7d001380 (pages mapped: 5)
+loadProgram64[interp]:   mapped seg vaddr=0x7ffff7fce000 len=0x1000 prot=0x1 filesz=0xd58
+loadProgram64[interp]:   mapped seg vaddr=0x7ffff7fcf000 len=0x26000 prot=0x5 filesz=0x25111
+loadProgram64[interp]:   mapped seg vaddr=0x7ffff7ff5000 len=0xa000 prot=0x1 filesz=0x9c7c
+loadProgram64[interp]:   mapped seg vaddr=0x7ffff7fff000 len=0x4000 prot=0x3 filesz=0x2810
+loadProgram64[interp]: RELA table at 0x7ffff7fcecc8, 1 entries (entsize=24)
+loadProgram64[interp]: applied 0 RELATIVE relocs (deferred 1 symbol-bound)
+loadProgram64: interp '/lib64/ld-linux-x86-64.so.2' mapped at base 0x7ffff7fce000, RIP=0x7ffff7fe8b70
+loadProgram64: stack built, RSP=0x7fffffffdc60 argc=2 envc=16 auxc=16
+sys_openat64: open('/lib/x86_64-linux-gnu/tls/x86_64/libc.so.6') -> -2
+sys_openat64: open('/lib/x86_64-linux-gnu/tls/libc.so.6') -> -2
+sys_openat64: open('/lib/x86_64-linux-gnu/x86_64/libc.so.6') -> -2
+DLLOPEN pid=22 OPEN '/usr/lib/wine/../x86_64-linux-gnu/wine/x86_64-unix/ntdll.so' -> fd 3
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=2 pid=14 tid=15 rip=0x700108ef3 (unmapped) @0x700108ef3
+D3DBT slot=3 pid=18 tid=19 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=4 pid=22 tid=23 rip=0x7001019b3 libc.so.6+0xdb9b3
+sys_openat64: open('/sys/devices/system/cpu/cpu0/topology/physical_package_id') -> -2
+sys_openat64: open('/sys/devices/system/cpu/cpu0/topology/thread_siblings') -> -2
+sys_openat64: open('/sys/devices/system/cpu/cpu0/topology/thread_siblings_list') -> -2
+sys_openat64: open('/sys/devices/system/cpu/cpu0/cache/index0/shared_cpu_map') -> -2
+sys_openat64: open('/sys/devices/system/cpu/cpu0/cache/index1/shared_cpu_map') -> -2
+sys_openat64: open('/sys/devices/system/cpu/cpu0/cache/index2/shared_cpu_map') -> -2
+sys_openat64: open('/sys/devices/system/cpu/cpu0/cache/index3/shared_cpu_map') -> -2
+sys_openat64: open('/sys/devices/system/node/online') -> -2
+DLLOPEN pid=22 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/libwine.so.1' -> fd 6
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/services.exe' -> fd 52
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/services.exe' -> fd 52
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/ntdll.dll' -> fd 52
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/apisetschema.dll' -> fd 52
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/kernel32.dll' -> fd 52
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/kernel32.dll' -> fd 52
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/kernelbase.dll' -> fd 52
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/kernelbase.dll' -> fd 52
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/advapi32.dll' -> fd 52
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/advapi32.dll' -> fd 52
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/msvcrt.dll' -> fd 52
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/msvcrt.dll' -> fd 52
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/sechost.dll' -> fd 52
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/sechost.dll' -> fd 52
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/ucrtbase.dll' -> fd 52
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/ucrtbase.dll' -> fd 52
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/rpcrt4.dll' -> fd 52
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/rpcrt4.dll' -> fd 52
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/setupapi.dll' -> fd 52
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/setupapi.dll' -> fd 52
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/version.dll' -> fd 52
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/version.dll' -> fd 52
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/userenv.dll' -> fd 52
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/userenv.dll' -> fd 52
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/tzres.dll' -> fd 52
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/tzres.dll' -> fd 52
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/tzres.dll' -> fd 59
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/tzres.dll' -> fd 52
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/tzres.dll' -> fd 52
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/tzres.dll' -> fd 59
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/winedevice.exe' -> fd 60
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=1 pid=22 tid=24 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=2 pid=14 tid=15 rip=0x700108ef3 (unmapped) @0x700108ef3
+D3DBT slot=3 pid=18 tid=19 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=4 pid=22 tid=23 rip=0x7000f786a libc.so.6+0xd186a
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/winedevice.exe' -> fd 60
+CPU64: exit_group syscall, status=0  pid=25 exe='/usr/lib/wine/wine64' cmd='/usr/lib/wine/wine64C:\windows\system32\services.exe'
+sys_execve64: pid=27 path='/usr/lib/wine/wine64-preloader' argv0='/usr/lib/wine/wine64-preloader' argc=3 envc=16
+sys_execve64:   env WINELOADER=/usr/lib/wine/wine64
+sys_execve64: pid=27 path='/usr/lib/wine/wine64' argv0='/usr/lib/wine/wine64' argc=2 envc=16
+sys_execve64:   env WINELOADER=/usr/lib/wine/wine64
+loadProgram64: entry=0x7d001380 phoff=0x40 phnum=13 segments=4 interp=/lib64/ld-linux-x86-64.so.2 pie=0
+loadProgram64: load range [0x7d000000, 0x7d0040d8) span=16600 bytes
+loadProgram64: PT_DYNAMIC vaddr=0x7d003de0 memsz=480
+loadProgram64[exe]:   mapped seg vaddr=0x7d000000 len=0x1000 prot=0x1 filesz=0xc20
+loadProgram64[exe]:   mapped seg vaddr=0x7d001000 len=0x1000 prot=0x5 filesz=0x501
+loadProgram64[exe]:   mapped seg vaddr=0x7d002000 len=0x1000 prot=0x1 filesz=0x21c
+loadProgram64[exe]:   mapped seg vaddr=0x7d003000 len=0x2000 prot=0x3 filesz=0x2d0
+loadProgram64[exe]: RELA table at 0x7d000980, 10 entries (entsize=24)
+loadProgram64[exe]: applied 3 RELATIVE relocs (deferred 7 symbol-bound)
+loadProgram64: PT_GNU_RELRO 0x7d003000..0x7d004000 -> RO
+loadProgram64: exe RIP=0x7d001380 (pages mapped: 5)
+loadProgram64[interp]:   mapped seg vaddr=0x7ffff7fce000 len=0x1000 prot=0x1 filesz=0xd58
+loadProgram64[interp]:   mapped seg vaddr=0x7ffff7fcf000 len=0x26000 prot=0x5 filesz=0x25111
+loadProgram64[interp]:   mapped seg vaddr=0x7ffff7ff5000 len=0xa000 prot=0x1 filesz=0x9c7c
+loadProgram64[interp]:   mapped seg vaddr=0x7ffff7fff000 len=0x4000 prot=0x3 filesz=0x2810
+loadProgram64[interp]: RELA table at 0x7ffff7fcecc8, 1 entries (entsize=24)
+loadProgram64[interp]: applied 0 RELATIVE relocs (deferred 1 symbol-bound)
+loadProgram64: interp '/lib64/ld-linux-x86-64.so.2' mapped at base 0x7ffff7fce000, RIP=0x7ffff7fe8b70
+loadProgram64: stack built, RSP=0x7fffffffdc60 argc=2 envc=16 auxc=16
+sys_openat64: open('/lib/x86_64-linux-gnu/tls/x86_64/libc.so.6') -> -2
+sys_openat64: open('/lib/x86_64-linux-gnu/tls/libc.so.6') -> -2
+sys_openat64: open('/lib/x86_64-linux-gnu/x86_64/libc.so.6') -> -2
+DLLOPEN pid=27 OPEN '/usr/lib/wine/../x86_64-linux-gnu/wine/x86_64-unix/ntdll.so' -> fd 3
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=1 pid=22 tid=24 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=2 pid=14 tid=15 rip=0x400066c16 (unmapped) @0x400066c16
+D3DBT slot=3 pid=18 tid=19 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=4 pid=22 tid=23 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=6 pid=27 tid=28 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=1 pid=22 tid=24 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=2 pid=14 tid=15 rip=0x7000f8350 (unmapped) @0x7000f8350
+D3DBT slot=3 pid=18 tid=19 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=4 pid=22 tid=23 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=6 pid=27 tid=28 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=1 pid=22 tid=24 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=2 pid=14 tid=15 rip=0x400066bd9 (unmapped) @0x400066bd9
+D3DBT slot=3 pid=18 tid=19 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=4 pid=22 tid=23 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=6 pid=27 tid=28 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=1 pid=22 tid=24 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=2 pid=14 tid=15 rip=0x70005da58 (unmapped) @0x70005da58
+D3DBT slot=3 pid=18 tid=19 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=4 pid=22 tid=23 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=6 pid=27 tid=28 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=1 pid=22 tid=24 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=2 pid=14 tid=15 rip=0x7000815a9 (unmapped) @0x7000815a9
+D3DBT slot=3 pid=18 tid=19 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=4 pid=22 tid=23 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=6 pid=27 tid=28 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=1 pid=22 tid=24 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=2 pid=14 tid=15 rip=0x400013410 (unmapped) @0x400013410
+D3DBT slot=3 pid=18 tid=19 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=4 pid=22 tid=23 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=6 pid=27 tid=28 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=1 pid=22 tid=24 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=2 pid=14 tid=15 rip=0x7000f8350 (unmapped) @0x7000f8350
+D3DBT slot=3 pid=18 tid=19 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=4 pid=22 tid=23 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=6 pid=27 tid=28 rip=0x7000f82ad libc.so.6+0xd22ad
+sys_openat64: open('/sys/devices/system/cpu/cpu0/topology/physical_package_id') -> -2
+sys_openat64: open('/sys/devices/system/cpu/cpu0/topology/thread_siblings') -> -2
+sys_openat64: open('/sys/devices/system/cpu/cpu0/topology/thread_siblings_list') -> -2
+sys_openat64: open('/sys/devices/system/cpu/cpu0/cache/index0/shared_cpu_map') -> -2
+sys_openat64: open('/sys/devices/system/cpu/cpu0/cache/index1/shared_cpu_map') -> -2
+sys_openat64: open('/sys/devices/system/cpu/cpu0/cache/index2/shared_cpu_map') -> -2
+sys_openat64: open('/sys/devices/system/cpu/cpu0/cache/index3/shared_cpu_map') -> -2
+sys_openat64: open('/sys/devices/system/node/online') -> -2
+DLLOPEN pid=27 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/libwine.so.1' -> fd 5
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/winedevice.exe' -> fd 65
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/winedevice.exe' -> fd 65
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/ntdll.dll' -> fd 65
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/apisetschema.dll' -> fd 65
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/kernel32.dll' -> fd 65
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/kernel32.dll' -> fd 65
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/kernelbase.dll' -> fd 65
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/kernelbase.dll' -> fd 65
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/advapi32.dll' -> fd 65
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/advapi32.dll' -> fd 65
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/msvcrt.dll' -> fd 65
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/msvcrt.dll' -> fd 65
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/sechost.dll' -> fd 65
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/sechost.dll' -> fd 65
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/ucrtbase.dll' -> fd 65
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/ucrtbase.dll' -> fd 65
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/ntoskrnl.exe' -> fd 65
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/ntoskrnl.exe' -> fd 65
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/tzres.dll' -> fd 65
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/tzres.dll' -> fd 65
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/tzres.dll' -> fd 69
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/tzres.dll' -> fd 65
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/tzres.dll' -> fd 65
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/tzres.dll' -> fd 69
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/rpcrt4.dll' -> fd 65
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/rpcrt4.dll' -> fd 65
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=1 pid=22 tid=24 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=2 pid=14 tid=15 rip=0x700108ef3 (unmapped) @0x700108ef3
+D3DBT slot=3 pid=18 tid=19 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=4 pid=22 tid=23 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=5 pid=22 tid=29 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=6 pid=27 tid=28 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=7 pid=22 tid=30 rip=0x1700288b1 ntdll.dll+0x278b1
+D3DBT slot=8 pid=27 tid=31 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=9 pid=27 tid=32 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=10 pid=27 tid=33 rip=0x700101829 libc.so.6+0xdb829
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/shell32.dll' -> fd 86
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/shell32.dll' -> fd 86
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/mscoree.dll' -> fd 90
+CPU64: exit_group syscall, status=0  pid=27 exe='/usr/lib/wine/wine64' cmd='/usr/lib/wine/wine64C:\windows\system32\winedevice.exe'
+CPU64: exit syscall, status=0  pid=27 exe='/usr/lib/wine/wine64' cmd='/usr/lib/wine/wine64C:\windows\system32\winedevice.exe'
+CPU64: exit syscall, status=0  pid=27 exe='/usr/lib/wine/wine64' cmd='/usr/lib/wine/wine64C:\windows\system32\winedevice.exe'
+CPU64: exit syscall, status=0  pid=27 exe='/usr/lib/wine/wine64' cmd='/usr/lib/wine/wine64C:\windows\system32\winedevice.exe'
+CPU64: exit syscall, status=0  pid=22 exe='/usr/lib/wine/wine64' cmd='/usr/lib/wine/wine64C:\windows\system32\services.exe'
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/gdi32.dll' -> fd 60
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/gdi32.dll' -> fd 60
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/user32.dll' -> fd 60
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/user32.dll' -> fd 60
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/zlib1.dll' -> fd 60
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/zlib1.dll' -> fd 60
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/version.dll' -> fd 60
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/version.dll' -> fd 60
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/win32u.dll' -> fd 60
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/win32u.dll' -> fd 60
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/shlwapi.dll' -> fd 60
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/shlwapi.dll' -> fd 60
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/shcore.dll' -> fd 60
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/shcore.dll' -> fd 60
+DLLOPEN pid=18 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/win32u.so' -> fd 5
+[guest fd=2 pid=18 wine64] Fontconfig error: "/etc/fonts/conf.d/10-hinting-slight.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/10-hinting-slight.conf", line 1: [guest fd=2 pid=18 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=18 wine64] 
+
+
+[guest fd=2 pid=18 wine64] Fontconfig error: "/etc/fonts/conf.d/10-scale-bitmap-fonts.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/10-scale-bitmap-fonts.conf", line 1: [guest fd=2 pid=18 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=18 wine64] 
+
+
+[guest fd=2 pid=18 wine64] Fontconfig error: "/etc/fonts/conf.d/10-yes-antialias.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/10-yes-antialias.conf", line 1: [guest fd=2 pid=18 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=18 wine64] 
+
+
+[guest fd=2 pid=18 wine64] Fontconfig error: "/etc/fonts/conf.d/11-lcdfilter-default.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/11-lcdfilter-default.conf", line 1: [guest fd=2 pid=18 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=18 wine64] 
+
+
+[guest fd=2 pid=18 wine64] Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-lgc-sans-mono.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-lgc-sans-mono.conf", line 1: [guest fd=2 pid=18 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=18 wine64] 
+
+
+[guest fd=2 pid=18 wine64] Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-lgc-sans.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-lgc-sans.conf", line 1: [guest fd=2 pid=18 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=18 wine64] 
+
+
+[guest fd=2 pid=18 wine64] Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-lgc-serif.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-lgc-serif.conf", line 1: [guest fd=2 pid=18 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=18 wine64] 
+
+
+[guest fd=2 pid=18 wine64] Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-sans-mono.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-sans-mono.conf", line 1: D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=1 pid=22 tid=24 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=2 pid=14 tid=15 rip=0x700108ef3 (unmapped) @0x700108ef3
+D3DBT slot=3 pid=18 tid=19 rip=0x7000f8350 libc.so.6+0xd2350
+D3DBT slot=4 pid=22 tid=23 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=7 pid=22 tid=30 rip=0x700101829 libc.so.6+0xdb829
+D3DBT slot=11 pid=22 tid=34 rip=0x700101829 libc.so.6+0xdb829
+D3DBT slot=12 pid=22 tid=35 rip=0x7000f82ec libc.so.6+0xd22ec
+[guest fd=2 pid=18 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=18 wine64] 
+
+
+[guest fd=2 pid=18 wine64] Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-sans.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-sans.conf", line 1: [guest fd=2 pid=18 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=18 wine64] 
+
+
+[guest fd=2 pid=18 wine64] Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-serif.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-serif.conf", line 1: [guest fd=2 pid=18 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=18 wine64] 
+
+
+[guest fd=2 pid=18 wine64] Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-vera.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-vera.conf", line 1: [guest fd=2 pid=18 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=18 wine64] 
+
+
+[guest fd=2 pid=18 wine64] Fontconfig error: "/etc/fonts/conf.d/30-metric-aliases.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/30-metric-aliases.conf", line 1: [guest fd=2 pid=18 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=18 wine64] 
+
+
+[guest fd=2 pid=18 wine64] Fontconfig error: "/etc/fonts/conf.d/40-nonlatin.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/40-nonlatin.conf", line 1: [guest fd=2 pid=18 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=18 wine64] 
+
+
+[guest fd=2 pid=18 wine64] Fontconfig error: "/etc/fonts/conf.d/45-generic.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/45-generic.conf", line 1: [guest fd=2 pid=18 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=18 wine64] 
+
+
+[guest fd=2 pid=18 wine64] Fontconfig error: "/etc/fonts/conf.d/45-latin.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/45-latin.conf", line 1: [guest fd=2 pid=18 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=18 wine64] 
+
+
+[guest fd=2 pid=18 wine64] Fontconfig error: "/etc/fonts/conf.d/48-spacing.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/48-spacing.conf", line 1: [guest fd=2 pid=18 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=18 wine64] 
+
+
+[guest fd=2 pid=18 wine64] Fontconfig error: "/etc/fonts/conf.d/49-sansserif.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/49-sansserif.conf", line 1: [guest fd=2 pid=18 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=18 wine64] 
+
+
+[guest fd=2 pid=18 wine64] Fontconfig error: "/etc/fonts/conf.d/50-user.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/50-user.conf", line 1: [guest fd=2 pid=18 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=18 wine64] 
+
+
+[guest fd=2 pid=18 wine64] Fontconfig error: "/etc/fonts/conf.d/51-local.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/51-local.conf", line 1: [guest fd=2 pid=18 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=18 wine64] 
+
+
+[guest fd=2 pid=18 wine64] Fontconfig error: "/etc/fonts/conf.d/57-dejavu-sans-mono.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/57-dejavu-sans-mono.conf", line 1: [guest fd=2 pid=18 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=18 wine64] 
+
+
+[guest fd=2 pid=18 wine64] Fontconfig error: "/etc/fonts/conf.d/57-dejavu-sans.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/57-dejavu-sans.conf", line 1: [guest fd=2 pid=18 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=18 wine64] 
+
+
+[guest fd=2 pid=18 wine64] Fontconfig error: "/etc/fonts/conf.d/57-dejavu-serif.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/57-dejavu-serif.conf", line 1: [guest fd=2 pid=18 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=18 wine64] 
+
+
+[guest fd=2 pid=18 wine64] Fontconfig error: "/etc/fonts/conf.d/58-dejavu-lgc-sans-mono.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/58-dejavu-lgc-sans-mono.conf", line 1: [guest fd=2 pid=18 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=18 wine64] 
+
+
+[guest fd=2 pid=18 wine64] Fontconfig error: "/etc/fonts/conf.d/58-dejavu-lgc-sans.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/58-dejavu-lgc-sans.conf", line 1: [guest fd=2 pid=18 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=18 wine64] 
+
+
+[guest fd=2 pid=18 wine64] Fontconfig error: "/etc/fonts/conf.d/58-dejavu-lgc-serif.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/58-dejavu-lgc-serif.conf", line 1: [guest fd=2 pid=18 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=18 wine64] 
+
+
+[guest fd=2 pid=18 wine64] Fontconfig error: "/etc/fonts/conf.d/60-generic.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/60-generic.conf", line 1: [guest fd=2 pid=18 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=18 wine64] 
+
+
+[guest fd=2 pid=18 wine64] Fontconfig error: "/etc/fonts/conf.d/60-latin.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/60-latin.conf", line 1: [guest fd=2 pid=18 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=18 wine64] 
+
+
+[guest fd=2 pid=18 wine64] Fontconfig error: "/etc/fonts/conf.d/65-fonts-persian.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/65-fonts-persian.conf", line 1: [guest fd=2 pid=18 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=18 wine64] 
+
+
+[guest fd=2 pid=18 wine64] Fontconfig error: "/etc/fonts/conf.d/65-nonlatin.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/65-nonlatin.conf", line 1: [guest fd=2 pid=18 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=18 wine64] 
+
+
+[guest fd=2 pid=18 wine64] Fontconfig error: "/etc/fonts/conf.d/69-unifont.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/69-unifont.conf", line 1: [guest fd=2 pid=18 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=18 wine64] 
+
+
+[guest fd=2 pid=18 wine64] Fontconfig error: "/etc/fonts/conf.d/70-no-bitmaps.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/70-no-bitmaps.conf", line 1: [guest fd=2 pid=18 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=18 wine64] 
+
+
+[guest fd=2 pid=18 wine64] Fontconfig error: "/etc/fonts/conf.d/80-delicious.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/80-delicious.conf", line 1: [guest fd=2 pid=18 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=18 wine64] 
+
+
+[guest fd=2 pid=18 wine64] Fontconfig error: "/etc/fonts/conf.d/90-synthetic.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/90-synthetic.conf", line 1: [guest fd=2 pid=18 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=18 wine64] 
+
+
+sys_openat64: open('/var/cache/fontconfig//c3dcd4ad9e69cebac9b5ee3a98cdc7dc-le64.cache-8') -> -2
+sys_openat64: open('/usr/share/wine/fonts/.uuid') -> -2
+sys_openat64: open('/home/username/.cache/fontconfig//c3dcd4ad9e69cebac9b5ee3a98cdc7dc-le64.cache-8') -> -2
+sys_openat64: open('/usr/share/wine/fonts/.uuid') -> -2
+sys_openat64: open('/home/username/.fontconfig//c3dcd4ad9e69cebac9b5ee3a98cdc7dc-le64.cache-8') -> -2
+sys_openat64: open('/usr/share/wine/fonts/.uuid') -> -2
+sys_openat64: open('/var/cache/fontconfig//c3dcd4ad9e69cebac9b5ee3a98cdc7dc-le64.cache-8') -> -2
+sys_openat64: open('/home/username/.cache/fontconfig//c3dcd4ad9e69cebac9b5ee3a98cdc7dc-le64.cache-8') -> -2
+sys_openat64: open('/home/username/.fontconfig//c3dcd4ad9e69cebac9b5ee3a98cdc7dc-le64.cache-8') -> -2
+CPU64: exit syscall, status=0  pid=22 exe='/usr/lib/wine/wine64' cmd='/usr/lib/wine/wine64C:\windows\system32\services.exe'
+CPU64: exit syscall, status=0  pid=22 exe='/usr/lib/wine/wine64' cmd='/usr/lib/wine/wine64C:\windows\system32\services.exe'
+CPU64: exit syscall, status=0  pid=22 exe='/usr/lib/wine/wine64' cmd='/usr/lib/wine/wine64C:\windows\system32\services.exe'
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=1 pid=22 tid=24 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=2 pid=14 tid=15 rip=0x700108ef3 (unmapped) @0x700108ef3
+D3DBT slot=3 pid=18 tid=19 rip=0x7001019b3 libc.so.6+0xdb9b3
+D3DBT slot=4 pid=22 tid=23 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=1 pid=22 tid=24 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=2 pid=14 tid=15 rip=0x700108ef3 (unmapped) @0x700108ef3
+D3DBT slot=3 pid=18 tid=19 rip=0x7001019b3 libc.so.6+0xdb9b3
+D3DBT slot=4 pid=22 tid=23 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=1 pid=22 tid=24 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=2 pid=14 tid=15 rip=0x700108ef3 (unmapped) @0x700108ef3
+D3DBT slot=3 pid=18 tid=19 rip=0x7000f7f37 libc.so.6+0xd1f37
+D3DBT slot=4 pid=22 tid=23 rip=0x7000f82ec libc.so.6+0xd22ec
+sys_openat64: open('/home/username/.cache/fontconfig//c3dcd4ad9e69cebac9b5ee3a98cdc7dc-le64.cache-8') -> -2
+sys_openat64: open('/usr/share/wine/fonts/.uuid') -> -2
+sys_openat64: open('/home/username/.fontconfig//c3dcd4ad9e69cebac9b5ee3a98cdc7dc-le64.cache-8') -> -2
+sys_openat64: open('/usr/share/wine/fonts/.uuid') -> -2
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/imm32.dll' -> fd 60
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/imm32.dll' -> fd 60
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/ole32.dll' -> fd 60
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/ole32.dll' -> fd 60
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/combase.dll' -> fd 60
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/combase.dll' -> fd 60
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/rpcrt4.dll' -> fd 60
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/rpcrt4.dll' -> fd 60
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/mscoree.dll' -> fd 60
+CPU64: exit_group syscall, status=0  pid=18 exe='/usr/lib/wine/wine64' cmd='/usr/lib/wine/wine64C:\windows\system32\wineboot.exe--init'
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/z:/blender-2.79b-windows64/blender.exe' -> fd 27
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x7000f63d3 libc.so.6+0xd03d3
+D3DBT slot=1 pid=22 tid=24 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=2 pid=14 tid=15 rip=0x7000fd104 (unmapped) @0x7000fd104
+D3DBT slot=4 pid=22 tid=23 rip=0x7000f82ec libc.so.6+0xd22ec
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/ntdll.dll' -> fd 31
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/apisetschema.dll' -> fd 31
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/kernel32.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/kernel32.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/kernelbase.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/kernelbase.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/shell32.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/shell32.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/advapi32.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/advapi32.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/msvcrt.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/msvcrt.dll' -> fd 32
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x7000f786a libc.so.6+0xd186a
+D3DBT slot=1 pid=22 tid=24 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=2 pid=14 tid=15 rip=0x700108ef3 (unmapped) @0x700108ef3
+D3DBT slot=4 pid=22 tid=23 rip=0x7000f82ec libc.so.6+0xd22ec
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/sechost.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/sechost.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/ucrtbase.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/ucrtbase.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/gdi32.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/gdi32.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/user32.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/user32.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/zlib1.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/zlib1.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/version.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/version.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/win32u.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/win32u.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/shlwapi.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/shlwapi.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/shcore.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/shcore.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/z:/blender-2.79b-windows64/python35.dll' -> fd 32
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/python35.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/python35.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/python35.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/python35.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/python35.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/python35.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/python35.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/python35.dll.so') -> -2
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/ws2_32.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/ws2_32.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/z:/blender-2.79b-windows64/msvcr120.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/msvcr120.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/z:/blender-2.79b-windows64/OpenAL32.dll' -> fd 32
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/openal32.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/openal32.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/openal32.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/openal32.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/openal32.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/openal32.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/openal32.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/openal32.dll.so') -> -2
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/ole32.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/ole32.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/combase.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/combase.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/rpcrt4.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/rpcrt4.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/winmm.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/winmm.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/msacm32.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/msacm32.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/z:/blender-2.79b-windows64/libsndfile-1.dll' -> fd 32
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/libsndfile-1.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/libsndfile-1.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/libsndfile-1.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/libsndfile-1.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/libsndfile-1.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/libsndfile-1.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/libsndfile-1.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/libsndfile-1.dll.so') -> -2
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x7001019b3 libc.so.6+0xdb9b3
+D3DBT slot=1 pid=22 tid=24 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=2 pid=14 tid=15 rip=0x700108ef3 (unmapped) @0x700108ef3
+D3DBT slot=4 pid=22 tid=23 rip=0x7000f82ec libc.so.6+0xd22ec
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/z:/blender-2.79b-windows64/SDL2.dll' -> fd 32
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/sdl2.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/sdl2.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/sdl2.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/sdl2.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/sdl2.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/sdl2.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/sdl2.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/sdl2.dll.so') -> -2
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/oleaut32.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/oleaut32.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/imm32.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/imm32.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/z:/blender-2.79b-windows64/OpenColorIO.dll' -> fd 32
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/opencolorio.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/opencolorio.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/opencolorio.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/opencolorio.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/opencolorio.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/opencolorio.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/opencolorio.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/opencolorio.dll.so') -> -2
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/z:/blender-2.79b-windows64/avcodec-57.dll' -> fd 32
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/avcodec-57.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/avcodec-57.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/avcodec-57.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/avcodec-57.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/avcodec-57.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/avcodec-57.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/avcodec-57.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/avcodec-57.dll.so') -> -2
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/z:/blender-2.79b-windows64/avutil-55.dll' -> fd 32
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/avutil-55.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/avutil-55.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/avutil-55.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/avutil-55.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/avutil-55.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/avutil-55.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/avutil-55.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/avutil-55.dll.so') -> -2
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/z:/blender-2.79b-windows64/swresample-2.dll' -> fd 32
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/swresample-2.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/swresample-2.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/swresample-2.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/swresample-2.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/swresample-2.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/swresample-2.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/swresample-2.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/swresample-2.dll.so') -> -2
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/z:/blender-2.79b-windows64/avformat-57.dll' -> fd 32
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/avformat-57.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/avformat-57.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/avformat-57.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/avformat-57.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/avformat-57.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/avformat-57.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/avformat-57.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/avformat-57.dll.so') -> -2
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/secur32.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/secur32.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/z:/blender-2.79b-windows64/avdevice-57.dll' -> fd 32
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/avdevice-57.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/avdevice-57.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/avdevice-57.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/avdevice-57.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/avdevice-57.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/avdevice-57.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/avdevice-57.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/avdevice-57.dll.so') -> -2
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/avicap32.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/avicap32.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/z:/blender-2.79b-windows64/swscale-4.dll' -> fd 32
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/swscale-4.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/swscale-4.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/swscale-4.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/swscale-4.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/swscale-4.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/swscale-4.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/swscale-4.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/swscale-4.dll.so') -> -2
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/z:/blender-2.79b-windows64/pthreadVC2.dll' -> fd 32
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/pthreadvc2.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/pthreadvc2.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/pthreadvc2.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/pthreadvc2.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/pthreadvc2.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/pthreadvc2.dll.so') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/pthreadvc2.dll') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/wine/pthreadvc2.dll.so') -> -2
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/glu32.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/glu32.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/opengl32.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/opengl32.dll' -> fd 32
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=1 pid=22 tid=24 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=2 pid=14 tid=15 rip=0x7000f786a (unmapped) @0x7000f786a
+D3DBT slot=4 pid=22 tid=23 rip=0x7000f82ec libc.so.6+0xd22ec
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/avifil32.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/avifil32.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/msvfw32.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/msvfw32.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/comctl32.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/comctl32.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/shfolder.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/shfolder.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/psapi.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/psapi.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/dbghelp.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/dbghelp.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/tzres.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/tzres.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/tzres.dll' -> fd 98
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/tzres.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/tzres.dll' -> fd 32
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/tzres.dll' -> fd 98
+DLLOPEN pid=10 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/win32u.so' -> fd 13
+[guest fd=2 pid=10 wine64] Fontconfig error: "/etc/fonts/conf.d/10-hinting-slight.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/10-hinting-slight.conf", line 1: [guest fd=2 pid=10 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=10 wine64] 
+
+
+[guest fd=2 pid=10 wine64] Fontconfig error: "/etc/fonts/conf.d/10-scale-bitmap-fonts.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/10-scale-bitmap-fonts.conf", line 1: [guest fd=2 pid=10 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=10 wine64] 
+
+
+[guest fd=2 pid=10 wine64] Fontconfig error: "/etc/fonts/conf.d/10-yes-antialias.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/10-yes-antialias.conf", line 1: [guest fd=2 pid=10 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=10 wine64] 
+
+
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x7000f786a libc.so.6+0xd186a
+D3DBT slot=1 pid=22 tid=24 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=2 pid=14 tid=15 rip=0x700108ef3 (unmapped) @0x700108ef3
+D3DBT slot=4 pid=22 tid=23 rip=0x7000f82ec libc.so.6+0xd22ec
+[guest fd=2 pid=10 wine64] Fontconfig error: "/etc/fonts/conf.d/11-lcdfilter-default.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/11-lcdfilter-default.conf", line 1: [guest fd=2 pid=10 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=10 wine64] 
+
+
+[guest fd=2 pid=10 wine64] Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-lgc-sans-mono.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-lgc-sans-mono.conf", line 1: [guest fd=2 pid=10 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=10 wine64] 
+
+
+[guest fd=2 pid=10 wine64] Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-lgc-sans.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-lgc-sans.conf", line 1: [guest fd=2 pid=10 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=10 wine64] 
+
+
+[guest fd=2 pid=10 wine64] Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-lgc-serif.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-lgc-serif.conf", line 1: [guest fd=2 pid=10 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=10 wine64] 
+
+
+[guest fd=2 pid=10 wine64] Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-sans-mono.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-sans-mono.conf", line 1: [guest fd=2 pid=10 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=10 wine64] 
+
+
+[guest fd=2 pid=10 wine64] Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-sans.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-sans.conf", line 1: [guest fd=2 pid=10 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=10 wine64] 
+
+
+[guest fd=2 pid=10 wine64] Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-serif.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-serif.conf", line 1: [guest fd=2 pid=10 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=10 wine64] 
+
+
+[guest fd=2 pid=10 wine64] Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-vera.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-vera.conf", line 1: [guest fd=2 pid=10 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=10 wine64] 
+
+
+[guest fd=2 pid=10 wine64] Fontconfig error: "/etc/fonts/conf.d/30-metric-aliases.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/30-metric-aliases.conf", line 1: [guest fd=2 pid=10 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=10 wine64] 
+
+
+[guest fd=2 pid=10 wine64] Fontconfig error: "/etc/fonts/conf.d/40-nonlatin.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/40-nonlatin.conf", line 1: [guest fd=2 pid=10 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=10 wine64] 
+
+
+[guest fd=2 pid=10 wine64] Fontconfig error: "/etc/fonts/conf.d/45-generic.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/45-generic.conf", line 1: [guest fd=2 pid=10 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=10 wine64] 
+
+
+[guest fd=2 pid=10 wine64] Fontconfig error: "/etc/fonts/conf.d/45-latin.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/45-latin.conf", line 1: [guest fd=2 pid=10 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=10 wine64] 
+
+
+[guest fd=2 pid=10 wine64] Fontconfig error: "/etc/fonts/conf.d/48-spacing.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/48-spacing.conf", line 1: [guest fd=2 pid=10 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=10 wine64] 
+
+
+[guest fd=2 pid=10 wine64] Fontconfig error: "/etc/fonts/conf.d/49-sansserif.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/49-sansserif.conf", line 1: [guest fd=2 pid=10 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=10 wine64] 
+
+
+[guest fd=2 pid=10 wine64] Fontconfig error: "/etc/fonts/conf.d/50-user.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/50-user.conf", line 1: [guest fd=2 pid=10 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=10 wine64] 
+
+
+[guest fd=2 pid=10 wine64] Fontconfig error: "/etc/fonts/conf.d/51-local.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/51-local.conf", line 1: [guest fd=2 pid=10 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=10 wine64] 
+
+
+[guest fd=2 pid=10 wine64] Fontconfig error: "/etc/fonts/conf.d/57-dejavu-sans-mono.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/57-dejavu-sans-mono.conf", line 1: [guest fd=2 pid=10 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=10 wine64] 
+
+
+[guest fd=2 pid=10 wine64] Fontconfig error: "/etc/fonts/conf.d/57-dejavu-sans.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/57-dejavu-sans.conf", line 1: [guest fd=2 pid=10 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=10 wine64] 
+
+
+[guest fd=2 pid=10 wine64] Fontconfig error: "/etc/fonts/conf.d/57-dejavu-serif.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/57-dejavu-serif.conf", line 1: [guest fd=2 pid=10 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=10 wine64] 
+
+
+[guest fd=2 pid=10 wine64] Fontconfig error: "/etc/fonts/conf.d/58-dejavu-lgc-sans-mono.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/58-dejavu-lgc-sans-mono.conf", line 1: [guest fd=2 pid=10 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=10 wine64] 
+
+
+[guest fd=2 pid=10 wine64] Fontconfig error: "/etc/fonts/conf.d/58-dejavu-lgc-sans.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/58-dejavu-lgc-sans.conf", line 1: [guest fd=2 pid=10 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=10 wine64] 
+
+
+[guest fd=2 pid=10 wine64] Fontconfig error: "/etc/fonts/conf.d/58-dejavu-lgc-serif.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/58-dejavu-lgc-serif.conf", line 1: [guest fd=2 pid=10 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=10 wine64] 
+
+
+[guest fd=2 pid=10 wine64] Fontconfig error: "/etc/fonts/conf.d/60-generic.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/60-generic.conf", line 1: [guest fd=2 pid=10 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=10 wine64] 
+
+
+[guest fd=2 pid=10 wine64] Fontconfig error: "/etc/fonts/conf.d/60-latin.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/60-latin.conf", line 1: [guest fd=2 pid=10 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=10 wine64] 
+
+
+[guest fd=2 pid=10 wine64] Fontconfig error: "/etc/fonts/conf.d/65-fonts-persian.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/65-fonts-persian.conf", line 1: [guest fd=2 pid=10 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=10 wine64] 
+
+
+[guest fd=2 pid=10 wine64] Fontconfig error: "/etc/fonts/conf.d/65-nonlatin.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/65-nonlatin.conf", line 1: [guest fd=2 pid=10 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=10 wine64] 
+
+
+[guest fd=2 pid=10 wine64] Fontconfig error: "/etc/fonts/conf.d/69-unifont.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/69-unifont.conf", line 1: [guest fd=2 pid=10 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=10 wine64] 
+
+
+[guest fd=2 pid=10 wine64] Fontconfig error: "/etc/fonts/conf.d/70-no-bitmaps.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/70-no-bitmaps.conf", line 1: [guest fd=2 pid=10 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=10 wine64] 
+
+
+[guest fd=2 pid=10 wine64] Fontconfig error: "/etc/fonts/conf.d/80-delicious.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/80-delicious.conf", line 1: [guest fd=2 pid=10 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=10 wine64] 
+
+
+[guest fd=2 pid=10 wine64] Fontconfig error: "/etc/fonts/conf.d/90-synthetic.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/90-synthetic.conf", line 1: [guest fd=2 pid=10 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=10 wine64] 
+
+
+sys_openat64: open('/home/username/.cache/fontconfig//c3dcd4ad9e69cebac9b5ee3a98cdc7dc-le64.cache-8') -> -2
+sys_openat64: open('/usr/share/wine/fonts/.uuid') -> -2
+sys_openat64: open('/home/username/.fontconfig//c3dcd4ad9e69cebac9b5ee3a98cdc7dc-le64.cache-8') -> -2
+sys_openat64: open('/usr/share/wine/fonts/.uuid') -> -2
+sys_openat64: open('/home/username/.cache/fontconfig//c3dcd4ad9e69cebac9b5ee3a98cdc7dc-le64.cache-8') -> -2
+sys_openat64: open('/usr/share/wine/fonts/.uuid') -> -2
+sys_openat64: open('/home/username/.fontconfig//c3dcd4ad9e69cebac9b5ee3a98cdc7dc-le64.cache-8') -> -2
+sys_openat64: open('/usr/share/wine/fonts/.uuid') -> -2
+DLLOPEN pid=10 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/ws2_32.so' -> fd 13
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x7000f786a libc.so.6+0xd186a
+D3DBT slot=1 pid=22 tid=24 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=2 pid=14 tid=15 rip=0x700108ef3 (unmapped) @0x700108ef3
+D3DBT slot=4 pid=22 tid=23 rip=0x7000f82ec libc.so.6+0xd22ec
+DLLOPEN pid=10 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/secur32.so' -> fd 13
+sys_openat64: open('/lib/x86_64-linux-gnu/libgnutls.so.30') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/tls/x86_64/libgnutls.so.30') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/tls/libgnutls.so.30') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/x86_64/libgnutls.so.30') -> -2
+sys_openat64: open('/usr/lib/x86_64-linux-gnu/libgnutls.so.30') -> -2
+sys_openat64: open('/lib/tls/x86_64/libgnutls.so.30') -> -2
+sys_openat64: open('/lib/tls/libgnutls.so.30') -> -2
+sys_openat64: open('/lib/x86_64/libgnutls.so.30') -> -2
+sys_openat64: open('/lib/libgnutls.so.30') -> -2
+sys_openat64: open('/usr/lib/tls/x86_64/libgnutls.so.30') -> -2
+sys_openat64: open('/usr/lib/tls/libgnutls.so.30') -> -2
+sys_openat64: open('/usr/lib/x86_64/libgnutls.so.30') -> -2
+sys_openat64: open('/usr/lib/libgnutls.so.30') -> -2
+DLLOPEN pid=10 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/avicap32.so' -> fd 13
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/explorer.exe' -> fd 32
+CPU64: exit_group syscall, status=0  pid=36 exe='/usr/lib/wine/wine64' cmd='/usr/lib/wine/wine64Z:\blender-2.79b-windows64\blender.exe--version'
+sys_execve64: pid=38 path='/usr/lib/wine/wine64-preloader' argv0='/usr/lib/wine/wine64-preloader' argc=4 envc=17
+sys_execve64:   env WINELOADER=/usr/lib/wine/wine64
+sys_execve64: pid=38 path='/usr/lib/wine/wine64' argv0='/usr/lib/wine/wine64' argc=3 envc=17
+sys_execve64:   env WINELOADER=/usr/lib/wine/wine64
+loadProgram64: entry=0x7d001380 phoff=0x40 phnum=13 segments=4 interp=/lib64/ld-linux-x86-64.so.2 pie=0
+loadProgram64: load range [0x7d000000, 0x7d0040d8) span=16600 bytes
+loadProgram64: PT_DYNAMIC vaddr=0x7d003de0 memsz=480
+loadProgram64[exe]:   mapped seg vaddr=0x7d000000 len=0x1000 prot=0x1 filesz=0xc20
+loadProgram64[exe]:   mapped seg vaddr=0x7d001000 len=0x1000 prot=0x5 filesz=0x501
+loadProgram64[exe]:   mapped seg vaddr=0x7d002000 len=0x1000 prot=0x1 filesz=0x21c
+loadProgram64[exe]:   mapped seg vaddr=0x7d003000 len=0x2000 prot=0x3 filesz=0x2d0
+loadProgram64[exe]: RELA table at 0x7d000980, 10 entries (entsize=24)
+loadProgram64[exe]: applied 3 RELATIVE relocs (deferred 7 symbol-bound)
+loadProgram64: PT_GNU_RELRO 0x7d003000..0x7d004000 -> RO
+loadProgram64: exe RIP=0x7d001380 (pages mapped: 5)
+loadProgram64[interp]:   mapped seg vaddr=0x7ffff7fce000 len=0x1000 prot=0x1 filesz=0xd58
+loadProgram64[interp]:   mapped seg vaddr=0x7ffff7fcf000 len=0x26000 prot=0x5 filesz=0x25111
+loadProgram64[interp]:   mapped seg vaddr=0x7ffff7ff5000 len=0xa000 prot=0x1 filesz=0x9c7c
+loadProgram64[interp]:   mapped seg vaddr=0x7ffff7fff000 len=0x4000 prot=0x3 filesz=0x2810
+loadProgram64[interp]: RELA table at 0x7ffff7fcecc8, 1 entries (entsize=24)
+loadProgram64[interp]: applied 0 RELATIVE relocs (deferred 1 symbol-bound)
+loadProgram64: interp '/lib64/ld-linux-x86-64.so.2' mapped at base 0x7ffff7fce000, RIP=0x7ffff7fe8b70
+loadProgram64: stack built, RSP=0x7fffffffdc20 argc=3 envc=17 auxc=16
+sys_openat64: open('/lib/x86_64-linux-gnu/tls/x86_64/libc.so.6') -> -2
+sys_openat64: open('/lib/x86_64-linux-gnu/tls/libc.so.6') -> -2
+sys_openat64: open('/lib/x86_64-linux-gnu/x86_64/libc.so.6') -> -2
+DLLOPEN pid=38 OPEN '/usr/lib/wine/../x86_64-linux-gnu/wine/x86_64-unix/ntdll.so' -> fd 3
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=1 pid=22 tid=24 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=2 pid=14 tid=15 rip=0x700108ef3 (unmapped) @0x700108ef3
+D3DBT slot=4 pid=22 tid=23 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=5 pid=38 tid=39 rip=0x7001019b3 libc.so.6+0xdb9b3
+sys_openat64: open('/sys/devices/system/cpu/cpu0/topology/physical_package_id') -> -2
+sys_openat64: open('/sys/devices/system/cpu/cpu0/topology/thread_siblings') -> -2
+sys_openat64: open('/sys/devices/system/cpu/cpu0/topology/thread_siblings_list') -> -2
+sys_openat64: open('/sys/devices/system/cpu/cpu0/cache/index0/shared_cpu_map') -> -2
+sys_openat64: open('/sys/devices/system/cpu/cpu0/cache/index1/shared_cpu_map') -> -2
+sys_openat64: open('/sys/devices/system/cpu/cpu0/cache/index2/shared_cpu_map') -> -2
+sys_openat64: open('/sys/devices/system/cpu/cpu0/cache/index3/shared_cpu_map') -> -2
+sys_openat64: open('/sys/devices/system/node/online') -> -2
+DLLOPEN pid=38 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/libwine.so.1' -> fd 5
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/explorer.exe' -> fd 101
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/explorer.exe' -> fd 101
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/ntdll.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/apisetschema.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/kernel32.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/kernel32.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/kernelbase.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/kernelbase.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/advapi32.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/advapi32.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/msvcrt.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/msvcrt.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/sechost.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/sechost.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/ucrtbase.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/ucrtbase.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/gdi32.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/gdi32.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/user32.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/user32.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/zlib1.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/zlib1.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/version.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/version.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/win32u.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/win32u.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/rpcrt4.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/rpcrt4.dll' -> fd 101
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=1 pid=22 tid=24 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=2 pid=14 tid=15 rip=0x700108ef3 (unmapped) @0x700108ef3
+D3DBT slot=4 pid=22 tid=23 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=5 pid=38 tid=39 rip=0x7000f786a libc.so.6+0xd186a
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/tzres.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/tzres.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/tzres.dll' -> fd 104
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/tzres.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/tzres.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/tzres.dll' -> fd 104
+DLLOPEN pid=38 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/win32u.so' -> fd 9
+[guest fd=2 pid=38 wine64] Fontconfig error: "/etc/fonts/conf.d/10-hinting-slight.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/10-hinting-slight.conf", line 1: [guest fd=2 pid=38 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=38 wine64] 
+
+
+[guest fd=2 pid=38 wine64] Fontconfig error: "/etc/fonts/conf.d/10-scale-bitmap-fonts.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/10-scale-bitmap-fonts.conf", line 1: [guest fd=2 pid=38 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=38 wine64] 
+
+
+[guest fd=2 pid=38 wine64] Fontconfig error: "/etc/fonts/conf.d/10-yes-antialias.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/10-yes-antialias.conf", line 1: [guest fd=2 pid=38 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=38 wine64] 
+
+
+[guest fd=2 pid=38 wine64] Fontconfig error: "/etc/fonts/conf.d/11-lcdfilter-default.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/11-lcdfilter-default.conf", line 1: [guest fd=2 pid=38 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=38 wine64] 
+
+
+[guest fd=2 pid=38 wine64] Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-lgc-sans-mono.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-lgc-sans-mono.conf", line 1: [guest fd=2 pid=38 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=38 wine64] 
+
+
+[guest fd=2 pid=38 wine64] Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-lgc-sans.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-lgc-sans.conf", line 1: [guest fd=2 pid=38 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=38 wine64] 
+
+
+[guest fd=2 pid=38 wine64] Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-lgc-serif.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-lgc-serif.conf", line 1: [guest fd=2 pid=38 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=38 wine64] 
+
+
+[guest fd=2 pid=38 wine64] Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-sans-mono.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-sans-mono.conf", line 1: [guest fd=2 pid=38 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=38 wine64] 
+
+
+[guest fd=2 pid=38 wine64] Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-sans.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-sans.conf", line 1: [guest fd=2 pid=38 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=38 wine64] 
+
+
+[guest fd=2 pid=38 wine64] Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-serif.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-dejavu-serif.conf", line 1: [guest fd=2 pid=38 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=38 wine64] 
+
+
+[guest fd=2 pid=38 wine64] Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-vera.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/20-unhint-small-vera.conf", line 1: [guest fd=2 pid=38 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=38 wine64] 
+
+
+[guest fd=2 pid=38 wine64] Fontconfig error: "/etc/fonts/conf.d/30-metric-aliases.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/30-metric-aliases.conf", line 1: [guest fd=2 pid=38 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=38 wine64] 
+
+
+[guest fd=2 pid=38 wine64] Fontconfig error: "/etc/fonts/conf.d/40-nonlatin.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/40-nonlatin.conf", line 1: [guest fd=2 pid=38 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=38 wine64] 
+
+
+[guest fd=2 pid=38 wine64] Fontconfig error: "/etc/fonts/conf.d/45-generic.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/45-generic.conf", line 1: [guest fd=2 pid=38 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=38 wine64] 
+
+
+[guest fd=2 pid=38 wine64] Fontconfig error: "/etc/fonts/conf.d/45-latin.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/45-latin.conf", line 1: [guest fd=2 pid=38 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=38 wine64] 
+
+
+[guest fd=2 pid=38 wine64] Fontconfig error: "/etc/fonts/conf.d/48-spacing.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/48-spacing.conf", line 1: [guest fd=2 pid=38 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=38 wine64] 
+
+
+[guest fd=2 pid=38 wine64] Fontconfig error: "/etc/fonts/conf.d/49-sansserif.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/49-sansserif.conf", line 1: [guest fd=2 pid=38 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=38 wine64] 
+
+
+[guest fd=2 pid=38 wine64] Fontconfig error: "/etc/fonts/conf.d/50-user.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/50-user.conf", line 1: [guest fd=2 pid=38 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=38 wine64] 
+
+
+[guest fd=2 pid=38 wine64] Fontconfig error: "/etc/fonts/conf.d/51-local.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/51-local.conf", line 1: [guest fd=2 pid=38 wine64] not well-formed (invalid token)
+not well-formed (invalid token)D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+[guest fd=2 pid=38 wine64] 
+
+
+D3DBT slot=0 pid=10 tid=11 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=1 pid=22 tid=24 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=2 pid=14 tid=15 rip=0x7000f786a (unmapped) @0x7000f786a
+D3DBT slot=4 pid=22 tid=23 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=5 pid=38 tid=39 rip=0x7000f82ad libc.so.6+0xd22ad
+[guest fd=2 pid=38 wine64] Fontconfig error: "/etc/fonts/conf.d/57-dejavu-sans-mono.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/57-dejavu-sans-mono.conf", line 1: [guest fd=2 pid=38 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=38 wine64] 
+
+
+[guest fd=2 pid=38 wine64] Fontconfig error: "/etc/fonts/conf.d/57-dejavu-sans.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/57-dejavu-sans.conf", line 1: [guest fd=2 pid=38 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=38 wine64] 
+
+
+[guest fd=2 pid=38 wine64] Fontconfig error: "/etc/fonts/conf.d/57-dejavu-serif.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/57-dejavu-serif.conf", line 1: [guest fd=2 pid=38 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=38 wine64] 
+
+
+[guest fd=2 pid=38 wine64] Fontconfig error: "/etc/fonts/conf.d/58-dejavu-lgc-sans-mono.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/58-dejavu-lgc-sans-mono.conf", line 1: [guest fd=2 pid=38 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=38 wine64] 
+
+
+[guest fd=2 pid=38 wine64] Fontconfig error: "/etc/fonts/conf.d/58-dejavu-lgc-sans.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/58-dejavu-lgc-sans.conf", line 1: [guest fd=2 pid=38 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=38 wine64] 
+
+
+[guest fd=2 pid=38 wine64] Fontconfig error: "/etc/fonts/conf.d/58-dejavu-lgc-serif.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/58-dejavu-lgc-serif.conf", line 1: [guest fd=2 pid=38 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=38 wine64] 
+
+
+[guest fd=2 pid=38 wine64] Fontconfig error: "/etc/fonts/conf.d/60-generic.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/60-generic.conf", line 1: [guest fd=2 pid=38 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=38 wine64] 
+
+
+[guest fd=2 pid=38 wine64] Fontconfig error: "/etc/fonts/conf.d/60-latin.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/60-latin.conf", line 1: [guest fd=2 pid=38 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=38 wine64] 
+
+
+[guest fd=2 pid=38 wine64] Fontconfig error: "/etc/fonts/conf.d/65-fonts-persian.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/65-fonts-persian.conf", line 1: [guest fd=2 pid=38 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=38 wine64] 
+
+
+[guest fd=2 pid=38 wine64] Fontconfig error: "/etc/fonts/conf.d/65-nonlatin.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/65-nonlatin.conf", line 1: [guest fd=2 pid=38 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=38 wine64] 
+
+
+[guest fd=2 pid=38 wine64] Fontconfig error: "/etc/fonts/conf.d/69-unifont.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/69-unifont.conf", line 1: [guest fd=2 pid=38 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=38 wine64] 
+
+
+[guest fd=2 pid=38 wine64] Fontconfig error: "/etc/fonts/conf.d/70-no-bitmaps.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/70-no-bitmaps.conf", line 1: [guest fd=2 pid=38 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=38 wine64] 
+
+
+[guest fd=2 pid=38 wine64] Fontconfig error: "/etc/fonts/conf.d/80-delicious.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/80-delicious.conf", line 1: [guest fd=2 pid=38 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=38 wine64] 
+
+
+[guest fd=2 pid=38 wine64] Fontconfig error: "/etc/fonts/conf.d/90-synthetic.conf", line 1: 
+Fontconfig error: "/etc/fonts/conf.d/90-synthetic.conf", line 1: [guest fd=2 pid=38 wine64] not well-formed (invalid token)
+not well-formed (invalid token)[guest fd=2 pid=38 wine64] 
+
+
+sys_openat64: open('/home/username/.cache/fontconfig//c3dcd4ad9e69cebac9b5ee3a98cdc7dc-le64.cache-8') -> -2
+sys_openat64: open('/usr/share/wine/fonts/.uuid') -> -2
+sys_openat64: open('/home/username/.fontconfig//c3dcd4ad9e69cebac9b5ee3a98cdc7dc-le64.cache-8') -> -2
+sys_openat64: open('/usr/share/wine/fonts/.uuid') -> -2
+sys_openat64: open('/home/username/.cache/fontconfig//c3dcd4ad9e69cebac9b5ee3a98cdc7dc-le64.cache-8') -> -2
+sys_openat64: open('/usr/share/wine/fonts/.uuid') -> -2
+sys_openat64: open('/home/username/.fontconfig//c3dcd4ad9e69cebac9b5ee3a98cdc7dc-le64.cache-8') -> -2
+sys_openat64: open('/usr/share/wine/fonts/.uuid') -> -2
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/imm32.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/imm32.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/winex11.drv' -> fd 101
+DLLOPEN pid=38 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/winex11.so' -> fd 9
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x7000f82ad libc.so.6+0xd22ad
+D3DBT slot=1 pid=22 tid=24 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=2 pid=14 tid=15 rip=0x700108ef3 (unmapped) @0x700108ef3
+XWireServer: accepted X11 client connection (now 1 open)
+D3DBT slot=4 pid=22 tid=23 rip=0x7000f82ec libc.so.6+0xd22ec
+XWire: handshake complete (vendor=Boxedwine root=0x260 visual=0x21), 124 body bytes
+D3DBT slot=5 pid=38 tid=39 rip=0x7000fde60 libc.so.6+0xd7e60
+sys_openat64: open('/home/username/.Xdefaults') -> -2
+sys_openat64: open('/home/username/.Xdefaults-boxedwine64') -> -2
+sys_openat64: open('/home/username/.Xdefaults') -> -2
+sys_openat64: open('/home/username/.Xdefaults-boxedwine64') -> -2
+sys_openat64: open('/home/username/.Xdefaults') -> -2
+sys_openat64: open('/home/username/.Xdefaults-boxedwine64') -> -2
+sys_openat64: open('/home/username/.Xdefaults') -> -2
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/uxtheme.dll' -> fd 101
+sys_openat64: open('/home/username/.Xdefaults-boxedwine64') -> -2
+sys_openat64: open('/home/username/.Xdefaults') -> -2
+sys_openat64: open('/home/username/.Xdefaults-boxedwine64') -> -2
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/uxtheme.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/uxtheme.dll' -> fd 101
+DLLOPEN pid=10 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-unix/opengl32.so' -> fd 13
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/uxtheme.dll' -> fd 101
+XWireServer: accepted X11 client connection (now 2 open)
+XWire: handshake complete (vendor=Boxedwine root=0x260 visual=0x21), 124 body bytes
+sys_openat64: open('/home/username/.XCompose') -> -2
+[guest fd=2 pid=38 wine64] Xlib:  extension "SHAPE" missing on display ":0".
+
+Xlib:  extension "SHAPE" missing on display ":0".
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/shell32.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/shell32.dll' -> fd 101
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x7096272f4 win32u.so+0x4f2f4
+D3DBT slot=1 pid=22 tid=24 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=2 pid=14 tid=15 rip=0x700108ef3 (unmapped) @0x700108ef3
+D3DBT slot=4 pid=22 tid=23 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=5 pid=38 tid=39 rip=0x7001019b3 libc.so.6+0xdb9b3
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/shlwapi.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/shlwapi.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/shcore.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/shcore.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/ole32.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/ole32.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/combase.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/combase.dll' -> fd 101
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/actxprxy.dll' -> fd 107
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/actxprxy.dll' -> fd 107
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/oleaut32.dll' -> fd 107
+DLLOPEN pid=14 OPEN '/usr/lib/x86_64-linux-gnu/wine/x86_64-windows/oleaut32.dll' -> fd 107
+CPU64: exit syscall, status=0  pid=22 exe='/usr/lib/wine/wine64' cmd='/usr/lib/wine/wine64C:\windows\system32\services.exe'
+CPU64: exit syscall, status=0  pid=38 exe='/usr/lib/wine/wine64' cmd='/usr/lib/wine/wine64C:\windows\system32\explorer.exe/desktop'
+CPU64: exit syscall, status=0  pid=22 exe='/usr/lib/wine/wine64' cmd='/usr/lib/wine/wine64C:\windows\system32\services.exe'
+CPU64: exit_group syscall, status=0  pid=38 exe='/usr/lib/wine/wine64' cmd='/usr/lib/wine/wine64C:\windows\system32\explorer.exe/desktop'
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=0 pid=10 tid=11 rip=0x7096272e1 win32u.so+0x4f2e1
+D3DBT slot=1 pid=22 tid=24 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=2 pid=14 tid=15 rip=0x7000f786a (unmapped) @0x7000f786a
+D3DBT slot=4 pid=22 tid=23 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=7 pid=22 tid=42 rip=0x700101829 libc.so.6+0xdb829
+sys_openat64: open('/proc/11/task/11/stat') -> -2
+ksyscall64: unimplemented syscall #100 (?) at RIP=0x7000d3b37 — RDI=0x31fa40 RSI=0x2 RDX=0x0 R10=0x39f34d0a90e1d748 R8=0x7 R9=0x7d020c10
+CPU64: unimpl opcode at RIP=0x140132780 bytes=c2 00 00 cc cc cc cc (rex=0x00 osz=0 asz=0 seg=00 rep=00)
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=1 pid=22 tid=24 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=2 pid=14 tid=15 rip=0x700108ef3 (unmapped) @0x700108ef3
+D3DBT slot=4 pid=22 tid=23 rip=0x7000f82ec libc.so.6+0xd22ec
+D3DBT slot=7 pid=22 tid=42 rip=0x700101829 libc.so.6+0xdb829
+CPU64: exit syscall, status=0  pid=22 exe='/usr/lib/wine/wine64' cmd='/usr/lib/wine/wine64C:\windows\system32\services.exe'
+DLLOPEN pid=14 OPEN '/home/username/.wine/dosdevices/c:/windows/system32/mscoree.dll' -> fd 9
+CPU64: exit_group syscall, status=0  pid=22 exe='/usr/lib/wine/wine64' cmd='/usr/lib/wine/wine64C:\windows\system32\services.exe'
+CPU64: exit syscall, status=0  pid=22 exe='/usr/lib/wine/wine64' cmd='/usr/lib/wine/wine64C:\windows\system32\services.exe'
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=2 pid=14 tid=15 rip=0x7000f8350 (unmapped) @0x7000f8350
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=2 pid=14 tid=15 rip=0x7000f8350 (unmapped) @0x7000f8350
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=2 pid=14 tid=15 rip=0x7000f8350 (unmapped) @0x7000f8350
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=2 pid=14 tid=15 rip=0x70005c616 (unmapped) @0x70005c616
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=2 pid=14 tid=15 rip=0x7000f8350 (unmapped) @0x7000f8350
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=2 pid=14 tid=15 rip=0x7000f8350 (unmapped) @0x7000f8350
+D3DBT: d3dLoaded=0 — live-thread RIP resolution:
+D3DBT slot=2 pid=14 tid=15 rip=0x7000f8350 (unmapped) @0x7000f8350
+CPU64: exit_group syscall, status=0  pid=14 exe='/usr/lib/wine/wineserver64' cmd='/usr/lib/wine/wineserver64'
+
+	38 container
+		39 text Default:  wine64 --version . Try  ?boot=1  (wineboot --init),  ?p=notepad.exe  (needs GL/X11),  ?novideo=1  (headless). Must be served cross-origin-isolated (COOP/COEP) — use  node server.mjs .
+
+The focused UI element is 0 AXWebArea BoxedWine 26.0.0 516KB, URL: 127.0.0.1:5173/backend/64/?chunked=1&fixture=blender&session=0&persist=0&p=Z%3A%5Cblender-2.79b-windows64%5Cblender.exe%20--version

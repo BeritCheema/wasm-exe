@@ -3,7 +3,7 @@ import { createHash } from 'node:crypto';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 const root = fileURLToPath(new URL('../', import.meta.url));
-const lock = JSON.parse(await readFile(new URL('./backend-lock.json', import.meta.url)));
+const lock = JSON.parse(await readFile(new URL(process.argv.includes('--64') ? './backend64-lock.json' : './backend-lock.json', import.meta.url)));
 for (const file of lock.files) {
   const dest = resolve(root, 'vendor/windowsappplayer', file.path);
   const hash = b => createHash('sha256').update(b).digest('hex');

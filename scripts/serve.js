@@ -1,3 +1,4 @@
+import { patchLauncher } from './patch-launcher.js';
 import { createServer } from 'node:http';
 import { createReadStream } from 'node:fs';
 import { stat, readFile } from 'node:fs/promises';
@@ -11,7 +12,7 @@ return createServer(async (req, res) => {
     if (!['GET', 'HEAD'].includes(req.method)) { res.writeHead(405).end(); return; }
     const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
     let path = pathname === '/' ? '/web/index.html' : pathname;
-    if (path === '/backend/') path += 'index.html';
+    if (path === '/backend/' || path === '/backend/64/') path += 'index.html';
     if (path.startsWith('/api/fs/')) path = '/backend/fs/' + path.slice(8);
     if (!/^\/(web|src|backend)\/[a-zA-Z0-9._/-]+$/.test(path) || path.includes('..')) { res.writeHead(404).end(); return; }
     path = path.replace(/^\/backend\//, '/vendor/windowsappplayer/');
@@ -21,6 +22,10 @@ return createServer(async (req, res) => {
     if (path === '/vendor/windowsappplayer/index.html') {
       const html = (await readFile(file, 'utf8')).replace('</body>', '<script src="/web/backend-bridge.js"></script></body>');
       res.writeHead(200, headers).end(req.method === 'HEAD' ? undefined : html); return;
+    }
+    if (path === '/vendor/windowsappplayer/64/wine64-launcher.js') {
+      const js = patchLauncher(await readFile(file, 'utf8'));
+      res.writeHead(200, headers).end(req.method === 'HEAD' ? undefined : js); return;
     }
     let start = 0, end = info.size - 1, status = 200;
     if (req.headers.range) {
