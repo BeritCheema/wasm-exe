@@ -4,14 +4,16 @@
   let lastOutput = started, lastProgress = started, stage = 'Downloading runtime', failure = '', queue = [], busy = false;
   const recent = [];
   const stages = ['Downloading runtime', 'Application files mounted', 'Starting Wine', 'Starting Windows services', 'Display connected', 'Blender initialization', 'Graphics initialization', 'Loading Blender Python', 'Stopped on runtime error'];
-  let lastGuestExecution = null;
+  let lastGuestExecution = null, lastMainExecution = null, activeModule = '';
   const panel = document.createElement('section');
   panel.style.cssText = 'margin:16px 0;padding:14px;background:#101923;border:1px solid #526478;border-radius:8px;font:14px monospace;color:#e0edf7';
   const title = document.createElement('strong');
   title.textContent = 'Live runtime diagnostics';
-  const status = document.createElement('div'), events = document.createElement('pre');
+  const status = document.createElement('div'), fatal = document.createElement('pre'), events = document.createElement('pre');
+  fatal.style.cssText = 'white-space:pre-wrap;color:#ff9b9b;margin:8px 0';
+  fatal.hidden = true;
   events.style.cssText = 'white-space:pre-wrap;max-height:180px;overflow:auto;margin-bottom:0';
-  panel.append(title, status, events);
+  panel.append(title, status, fatal, events);
   document.body.prepend(panel);
   const elapsed = () => (performance.now() - started) / 1000;
   function record(text, level = 'runtime') {
@@ -20,6 +22,8 @@
     if (level === 'runtime' && !/^(RIPSAMPLE|KUSER clock:)/.test(text)) lastOutput = now;
     const sample = /RIPSAMPLE HB .*dIns=(\d+)/.exec(text);
     if (sample && Number(sample[1]) > 0) lastGuestExecution = now;
+    const mainThread = /RIPSAMPLE HB slot=0 .*dIns=(\d+) rip=\S+ (\S+)/.exec(text);
+    if (mainThread && Number(mainThread[1]) > 0) { activeModule = mainThread[2]; lastMainExecution = now; }
     let next;
     if (/Loaded .*\.zip/.test(text)) next = 'Application files mounted';
     if (/Launching.*wine64/.test(text)) next = 'Starting Wine';
@@ -27,9 +31,9 @@
     if (/XWire: handshake complete/.test(text)) next = 'Display connected';
     if (/\.thumbnails|Blender 2\.|found bundled python|Read prefs/.test(text)) next = 'Blender initialization';
     if (/gl64.*(context|host GL up)|GL_VENDOR/i.test(text)) next = 'Graphics initialization';
-    if (/found bundled python/.test(text)) next = 'Loading Blender Python';
+    if (/found bundled python|APPFILE.*\.py/.test(text)) next = 'Loading Blender Python';
     if (/unimpl opcode|RuntimeError|Aborted\(|Boot failed|Exception:/.test(text)) {
-      failure = text; next = 'Stopped on runtime error';
+      failure = text; fatal.textContent = text; fatal.hidden = false; next = 'Stopped on runtime error';
     }
     if (next && stages.indexOf(next) >= stages.indexOf(stage)) {
       if (next !== stage) lastProgress = now;
@@ -38,7 +42,7 @@
     const entry = { run, at: new Date().toISOString(), seconds: +elapsed().toFixed(3), level, text };
     queue.push(entry);
     if (queue.length > 2000) queue.splice(0, queue.length - 2000);
-    if (next || /unimplemented syscall/i.test(text) || level === 'error') {
+    if (next || /APPFILE|unimplemented syscall/i.test(text) || level === 'error') {
       recent.push(`[${entry.seconds.toFixed(1)}s] ${text}`);
       if (recent.length > 12) recent.shift();
       events.textContent = recent.join('\n');
@@ -48,7 +52,7 @@
   }
   function render() {
     const quiet = (performance.now() - lastOutput) / 1000;
-    status.textContent = `${stage} · elapsed ${elapsed().toFixed(0)}s · last runtime output ${quiet.toFixed(0)}s ago · stage unchanged ${((performance.now()-lastProgress)/1000).toFixed(0)}s${lastGuestExecution === null ? '' : ' · guest instructions last advanced ' + ((performance.now()-lastGuestExecution)/1000).toFixed(0) + 's ago'}${quiet > 20 ? ' · waiting for guest output' : ''}`;
+    status.textContent = `${stage} · elapsed ${elapsed().toFixed(0)}s · last runtime output ${quiet.toFixed(0)}s ago · stage unchanged ${((performance.now()-lastProgress)/1000).toFixed(0)}s${lastGuestExecution === null ? '' : ' · guest instructions last advanced ' + ((performance.now()-lastGuestExecution)/1000).toFixed(0) + 's ago'}${activeModule ? ' · main thread: ' + activeModule + ' (active ' + ((performance.now()-lastMainExecution)/1000).toFixed(0) + 's ago)' : ''}${quiet > 20 ? ' · waiting for guest output' : ''}`;
     status.style.color = failure ? '#ff9b9b' : '#a5d6ff';
   }
   async function flush() {

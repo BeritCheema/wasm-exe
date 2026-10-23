@@ -71,7 +71,7 @@ unsigned 16-bit stack adjustment. Tests cover zero, 16, and 32768 bytes.
 The next browser run passed that point and reported `0F 5A C1` (CVTPS2PD)
 at `0x1429538bd`. The patch now also converts the low two float lanes to
 doubles, with register and memory source tests.
-The rebuilt CPU self-test reports **243 passed, 0 failed**. This alone does not
+The rebuilt CPU self-test reports **246 passed, 0 failed**. This alone does not
 establish Blender compatibility; browser testing is ongoing.
 
 To reproduce the runtime build, activate Emscripten **4.0.23**, then run
@@ -114,3 +114,13 @@ and execute Wine's high/low/high clock-reading sequence. The browser now shows t
 consistent clock words, and Blender moving beyond the clock loop into Python
 initialization. The Blender UI is not yet verified. Trace mode includes the
 shared clock words, excluded from the application-output inactivity timer.
+
+
+With the clock fix, Blender passed Python initialization after roughly six
+minutes, then stopped on `0F 0D 4E 32` at `0x140b0f6e9` (PREFETCHW). The
+emulator now decodes this cache hint without accessing guest memory, matching
+its existing treatment of PREFETCH. Three tests cover displacement/SIB lengths,
+unmapped targets, and preserved registers/flags. See [AMD's instruction
+reference](https://www.amd.com/content/dam/amd/en/documents/archived-tech-docs/programmer-references/21928.pdf).
+Trace mode also reports opened Python and Blender files, and the diagnostics
+panel identifies the main thread's current module. A further GUI test is ongoing.
