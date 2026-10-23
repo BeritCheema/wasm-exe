@@ -73,3 +73,14 @@ See [architecture and milestones](docs/architecture.md). A successful arithmetic
 - [Boxedwine64](https://github.com/andrewnakas/Boxedwine64): candidate upstream for evaluation; no code or runtime is incorporated here.
 
 No license has been selected for the original wasm-exe code yet. Downloaded third-party code retains its own licenses; see [backend provenance](docs/external-backend.md). Public visibility alone does not grant reuse rights to original code.
+
+
+### Runtime debugging
+
+`npm run build:backend64` builds our CPU fixes from pinned Boxedwine64 source
+(requires activated Emscripten 4.0.23). `npm run test:backend64` runs the engine
+CPU suite. The original Blender EXE remains unchanged.
+
+The browser test now shows elapsed time, startup stages and timestamped events.
+`npm run runtime:status` reads the latest local run log and shows thread activity
+and errors. Full logs are saved under ignored `vendor/runtime-logs/`.

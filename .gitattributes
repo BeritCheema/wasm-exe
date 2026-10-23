@@ -1,0 +1,2 @@
+# Upstream source patches include CRLF context; preserve their exact bytes.
+patches/*.patch -text whitespace=cr-at-eol

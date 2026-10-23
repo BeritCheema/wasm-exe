@@ -71,7 +71,7 @@ unsigned 16-bit stack adjustment. Tests cover zero, 16, and 32768 bytes.
 The next browser run passed that point and reported `0F 5A C1` (CVTPS2PD)
 at `0x1429538bd`. The patch now also converts the low two float lanes to
 doubles, with register and memory source tests.
-The rebuilt CPU self-test reports **239 passed, 0 failed**. This alone does not
+The rebuilt CPU self-test reports **241 passed, 0 failed**. This alone does not
 establish Blender compatibility; browser testing is ongoing.
 
 To reproduce the runtime build, activate Emscripten **4.0.23**, then run
@@ -80,3 +80,26 @@ pinned source, applies the patch and installs the rebuilt JS/Wasm locally.
 Running `setup:backend64` again restores the original upstream binaries.
 Run `npm run test:backend64` with the same SDK active to run the CPU tests.
 Blender's official archive and executable are unchanged.
+
+
+## Runtime diagnostics
+
+Each browser run now has timestamped output, a stage/activity panel and a UUID.
+The local dev server saves events to ignored `vendor/runtime-logs/<UUID>.jsonl`.
+Use `npm run runtime:status` for the latest run's stage, instruction failure and
+thread samples. Add `&ripsample=1` to a test URL to record guest thread RIP and
+instruction deltas every two seconds. A live browser heartbeat is distinct from
+guest CPU progress; absence of output alone does not prove a deadlock.
+The log remains local. On-screen raw output is capped at 64 KiB.
+
+A subsequent GUI launch reached Blender thumbnail setup and stopped on
+`66 0F 5A C1` at `0x14083175d` (CVTPD2PS). The CPU patch now also supports this
+conversion and tests register/memory sources plus cleared upper lanes.
+
+
+The graphics bridge now accepts explicit default attenuation and disabled
+spotlight state; non-default attenuation/spotlight requests remain unsupported.
+This follows Blender 2.79b's `GPU_basic_shader_light_set` initialization path.
+Some reloads after a runtime abort stalled during archive scanning. Until the
+cause is resolved, close the failed test tab and open a fresh test tab. Archive
+metadata checks now report the exact ZIP being scanned.

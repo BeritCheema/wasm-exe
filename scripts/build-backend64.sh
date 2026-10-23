@@ -6,8 +6,10 @@ engine_dir="${BOXEDWINE_SOURCE_DIR:-$project_dir/vendor/Boxedwine64-source}"
 revision=dee2ff3f08d9b5bdfe78c15bdefbf8f89b4f1639
 command -v emcc >/dev/null || { echo 'Activate Emscripten 4.0.23 first.' >&2; exit 1; }
 if [ ! -d "$engine_dir/.git" ]; then
-  git clone https://github.com/andrewnakas/Boxedwine64.git "$engine_dir"
-  git -C "$engine_dir" checkout "$revision"
+  git init "$engine_dir"
+  git -C "$engine_dir" remote add origin https://github.com/andrewnakas/Boxedwine64.git
+  git -C "$engine_dir" fetch --depth 1 origin "$revision"
+  git -C "$engine_dir" checkout --detach FETCH_HEAD
 fi
 [ "$(git -C "$engine_dir" rev-parse HEAD)" = "$revision" ] || { echo 'Unexpected engine revision' >&2; exit 1; }
 if git -C "$engine_dir" apply --check "$project_dir/patches/boxedwine64-blender-cpu.patch" 2>/dev/null; then

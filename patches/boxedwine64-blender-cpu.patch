@@ -1,5 +1,5 @@
 diff --git a/source/emulation/cpu/cpu64.cpp b/source/emulation/cpu/cpu64.cpp
-index 6dbfbec..70a44f8 100644
+index 6dbfbec..bcc6e27 100644
 --- a/source/emulation/cpu/cpu64.cpp
 +++ b/source/emulation/cpu/cpu64.cpp
 @@ -750,7 +750,7 @@ U32 CPU64::step() {
@@ -37,7 +37,7 @@ index 6dbfbec..70a44f8 100644
      }
  
      // IRETQ (REX.W CF == 48 CF), and the non-promoted IRET (CF) / IRETD.
-@@ -3907,6 +3909,21 @@ dsp_54:
+@@ -3907,6 +3909,37 @@ dsp_54:
              U64 bits; std::memcpy(&bits, &d, sizeof(bits)); return bits;
          };
  
@@ -56,11 +56,27 @@ index 6dbfbec..70a44f8 100644
 +            return used;
 +        }
 +
++        // CVTPD2PS xmm, xmm/m128: narrow two doubles, clear the upper lanes.
++        if (op2 == 0x5A && p.rep == 0 && osize66) {
++            ModRM m = decodeModRM(rip + opOff + 2, p, 0);
++            U64 lo = m.isReg ? xmm[m.rmIndex].lo : memory->readq(m.effAddr);
++            U64 hi = m.isReg ? xmm[m.rmIndex].hi : memory->readq(m.effAddr + 8);
++            float a = (float)u64ToDouble(lo), b = (float)u64ToDouble(hi);
++            U32 low, high;
++            std::memcpy(&low, &a, sizeof(low));
++            std::memcpy(&high, &b, sizeof(high));
++            xmm[m.regField].lo = (U64)low | ((U64)high << 32);
++            xmm[m.regField].hi = 0;
++            U32 used = opOff + 2 + m.length;
++            rip += used;
++            return used;
++        }
++
          // MOVSD xmm, xmm/m64   F2 0F 10 /r   (load low qword; zero high if mem)
          // MOVSD xmm/m64, xmm   F2 0F 11 /r   (store low qword)
          if ((op2 == 0x10 || op2 == 0x11) && p.rep == 0xF2) {
 diff --git a/source/emulation/cpu/cpu64SelfTest.cpp b/source/emulation/cpu/cpu64SelfTest.cpp
-index f2519a5..211cdb3 100644
+index f2519a5..f3a9a2c 100644
 --- a/source/emulation/cpu/cpu64SelfTest.cpp
 +++ b/source/emulation/cpu/cpu64SelfTest.cpp
 @@ -194,6 +194,19 @@ int runX64SelfTest() {
@@ -83,7 +99,7 @@ index f2519a5..211cdb3 100644
      // IRETQ (48 CF). Wine's PE-side ntdll returns from its user-mode exception
      // dispatcher with iretq. Build a long-mode interrupt frame on the stack
      // (pushed high-to-low: SS, RSP, RFLAGS, CS, RIP) and execute iretq; it must
-@@ -2450,6 +2463,22 @@ int runX64SelfTest() {
+@@ -2450,6 +2463,35 @@ int runX64SelfTest() {
          });
      }
  
@@ -103,6 +119,74 @@ index f2519a5..211cdb3 100644
 +        });
 +    }
 +
++    for (bool fromMemory : {false, true}) {
++        std::vector<U8> code = {
++            0x48, 0xB8, 0, 0, 0, 0, 0, 0, 0x02, 0xC0, 0x50,
++            0x48, 0xB8, 0, 0, 0, 0, 0, 0, 0xF8, 0x3F, 0x50
++        }; // stack contains {1.5, -2.25}
++        if (fromMemory) code.insert(code.end(), {0x66, 0x0F, 0x5A, 0x04, 0x24});
++        else code.insert(code.end(), {0x66, 0x0F, 0x10, 0x04, 0x24, 0x66, 0x0F, 0x5A, 0xC0});
++        code.insert(code.end(), {0x58, 0x58});
++        runAndCheck(r, "cvtpd2ps signed lanes and zero upper", withExit(code), [](CPU64& c) {
++            return c.xmm[0].lo == 0xC01000003FC00000ULL && c.xmm[0].hi == 0;
++        });
++    }
++
      // Test 61 — CVTSI2SD with REX.W: int64 42 → double 42.0
      // 42.0 = 0x4045000000000000
      {
+diff --git a/source/opengl/gl64bridge.cpp b/source/opengl/gl64bridge.cpp
+index 33d27b0..93818f6 100644
+--- a/source/opengl/gl64bridge.cpp
++++ b/source/opengl/gl64bridge.cpp
+@@ -80,13 +80,25 @@
+ // no glemu equivalent — Emscripten's FFP shader synthesis already folds glColor
+ // into the material, so a no-op preserves the visible result. These shims keep
+ // the bridge's call sites (GL_MT(glLightf(...)) etc.) unchanged.
++// glemu's directional-light shader already has the GL default attenuation
++// (1,0,0) and no spotlight. Accept explicit resets to those defaults without
++// entering glemu's abort-only cases. Non-default requests still reach glemu,
++// so unsupported lighting is never silently reported as implemented.
++static inline void bw_glLightfv(GLenum light, GLenum pname, const GLfloat* p) {
++    if ((pname == 0x1207 && p[0] == 1.0f) ||
++        ((pname == 0x1208 || pname == 0x1209 || pname == 0x1205) && p[0] == 0.0f) ||
++        (pname == 0x1206 && p[0] == 180.0f) ||
++        (pname == 0x1204) /* direction is immaterial while cutoff stays 180 */) return;
++    glLightfv(light, pname, p);
++}
+ static inline void bw_glLightf(GLenum light, GLenum pname, GLfloat v) {
+-    GLfloat p[1] = { v }; glLightfv(light, pname, p);
++    GLfloat p[1] = { v }; bw_glLightfv(light, pname, p);
+ }
+ static inline void bw_glMaterialf(GLenum face, GLenum pname, GLfloat v) {
+     GLfloat p[1] = { v }; glMaterialfv(face, pname, p);
+ }
+ static inline void bw_glColorMaterial(GLenum, GLenum) { /* glemu folds glColor */ }
++#define glLightfv       bw_glLightfv
+ #define glLightf        bw_glLightf
+ #define glMaterialf     bw_glMaterialf
+ #define glColorMaterial bw_glColorMaterial
+diff --git a/source/sdl/startupArgs.cpp b/source/sdl/startupArgs.cpp
+index c25e3ba..bb9c0bb 100644
+--- a/source/sdl/startupArgs.cpp
++++ b/source/sdl/startupArgs.cpp
+@@ -327,7 +327,9 @@ bool StartUpArgs::apply() {
+     std::vector<BString> fullfilled;
+     for (auto& zip : zips) {
+         BString fullfills;
++        klog_fmt("Archive metadata: checking %s fullfills.txt", zip.c_str());
+         FsZip::readFileFromZip(zip, B("fullfills.txt"), fullfills);
++        klog_fmt("Archive metadata: checked %s fullfills.txt", zip.c_str());
+         if (fullfills.length()) {
+             fullfilled.push_back(fullfills);
+         }
+@@ -335,7 +337,9 @@ bool StartUpArgs::apply() {
+     std::vector<BString> depends;
+     for (auto& zip : zips) {
+         BString depend;
++        klog_fmt("Archive metadata: checking %s depends.txt", zip.c_str());
+         FsZip::readFileFromZip(zip, B("depends.txt"), depend);
++        klog_fmt("Archive metadata: checked %s depends.txt", zip.c_str());
+         if (depend.length() && !vectorContainsIgnoreCase(depends, depend) && !vectorContainsIgnoreCase(zips, depend) && !vectorContainsIgnoreCase(fullfilled, depend)) {
+             BString originalDepend = depend;
+             if (!Fs::doesNativePathExist(depend)) {
