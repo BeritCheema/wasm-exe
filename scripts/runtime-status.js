@@ -10,6 +10,8 @@ if (!latest) { console.error('No saved run with that ID.'); process.exit(1); }
 const entries = (await readFile(new URL(latest.name, dir), 'utf8')).trim().split('\n').flatMap(line => { try { return [JSON.parse(line)]; } catch { return []; } });
 const last = entries.at(-1), heartbeat = entries.findLast(e => e.level === 'heartbeat');
 console.log(`Run ${latest.name}\nElapsed ${last.seconds}s · last report ${Math.round((Date.now()-Date.parse(last.at))/1000)}s ago\nStage: ${heartbeat?.text ?? 'starting'}`);
+const reportAge = Math.round((Date.now() - Date.parse(last.at)) / 1000);
+if (reportAge > 15) console.log('STALE: browser telemetry stopped; the tab may be closed, suspended, or unresponsive.');
 const errors = entries.filter(e => /unimpl opcode|RuntimeError|Aborted\(|Boot failed|Exception:/.test(e.text));
 for (const e of errors.slice(-3)) console.log(`ERROR [${e.seconds}s] ${e.text}`);
 const threads = new Map();

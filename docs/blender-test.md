@@ -124,3 +124,11 @@ unmapped targets, and preserved registers/flags. See [AMD's instruction
 reference](https://www.amd.com/content/dam/amd/en/documents/archived-tech-docs/programmer-references/21928.pdf).
 Trace mode also reports opened Python and Blender files, and the diagnostics
 panel identifies the main thread's current module. A further GUI test is ongoing.
+
+
+The PREFETCHW fix let the next run reach its first `glDrawElements` call at
+about 404 seconds. At 410 seconds the upstream legacy GL emulation aborted on
+`GL_POLYGON` (mode 9). The bridge now maps filled convex immediate-mode polygons
+to `GL_TRIANGLE_FAN`; legacy polygon wireframe and flat-shading provoking-vertex
+semantics remain limitations. The diagnostics layout reserves canvas space and
+scrolls instead of squeezing the canvas below the log panel.

@@ -3,7 +3,7 @@
   const run = crypto.randomUUID();
   let lastOutput = started, lastProgress = started, stage = 'Downloading runtime', failure = '', queue = [], busy = false;
   const recent = [];
-  const stages = ['Downloading runtime', 'Application files mounted', 'Starting Wine', 'Starting Windows services', 'Display connected', 'Blender initialization', 'Graphics initialization', 'Loading Blender Python', 'Stopped on runtime error'];
+  const stages = ['Downloading runtime', 'Application files mounted', 'Starting Wine', 'Starting Windows services', 'Display connected', 'Blender initialization', 'Graphics initialization', 'Loading Blender Python', 'Drawing application', 'Stopped on runtime error'];
   let lastGuestExecution = null, lastMainExecution = null, activeModule = '';
   // The upstream shell fills one viewport. Diagnostics need scrollable space
   // so their height cannot collapse the application's canvas to a thumbnail.
@@ -37,6 +37,7 @@
     if (/\.thumbnails|Blender 2\.|found bundled python|Read prefs/.test(text)) next = 'Blender initialization';
     if (/gl64.*(context|host GL up)|GL_VENDOR/i.test(text)) next = 'Graphics initialization';
     if (/found bundled python|APPFILE.*\.py/.test(text)) next = 'Loading Blender Python';
+    if (/gl64 DRAW: first/.test(text)) next = 'Drawing application';
     if (/unimpl opcode|RuntimeError|Aborted\(|Boot failed|Exception:/.test(text)) {
       failure = text; fatal.textContent = text; fatal.hidden = false; next = 'Stopped on runtime error';
     }
