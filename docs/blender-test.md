@@ -59,3 +59,24 @@ another startup test; supporting this one instruction may reveal further gaps.
 [startup screenshot](screenshots/blender-startup.png) preserve the observation.
 The upstream splash says “Launching Notepad” even for this custom command;
 the launch arguments in the log identify the actual Blender test.
+
+## Runtime repair in progress
+
+The original `RET imm16` failure has a source fix in
+[the engine patch](../patches/boxedwine64-blender-cpu.patch), applied to
+[Boxedwine64](https://github.com/andrewnakas/Boxedwine64) revision
+`dee2ff3f08d9b5bdfe78c15bdefbf8f89b4f1639` (GPL-2.0-or-later).
+This adds RET imm16 to dispatch and implements return-address pop followed by
+unsigned 16-bit stack adjustment. Tests cover zero, 16, and 32768 bytes.
+The next browser run passed that point and reported `0F 5A C1` (CVTPS2PD)
+at `0x1429538bd`. The patch now also converts the low two float lanes to
+doubles, with register and memory source tests.
+The rebuilt CPU self-test reports **239 passed, 0 failed**. This alone does not
+establish Blender compatibility; browser testing is ongoing.
+
+To reproduce the runtime build, activate Emscripten **4.0.23**, then run
+`npm run build:backend64` after `npm run setup:backend64`. The script downloads
+pinned source, applies the patch and installs the rebuilt JS/Wasm locally.
+Running `setup:backend64` again restores the original upstream binaries.
+Run `npm run test:backend64` with the same SDK active to run the CPU tests.
+Blender's official archive and executable are unchanged.

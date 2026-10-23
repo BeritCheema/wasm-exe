@@ -1,0 +1,108 @@
+diff --git a/source/emulation/cpu/cpu64.cpp b/source/emulation/cpu/cpu64.cpp
+index 6dbfbec..70a44f8 100644
+--- a/source/emulation/cpu/cpu64.cpp
++++ b/source/emulation/cpu/cpu64.cpp
+@@ -750,7 +750,7 @@ U32 CPU64::step() {
+         case 0xd7: goto dsp_21;
+         case 0x68: case 0x6a: goto dsp_22;
+         case 0x0f: goto dsp_23;
+-        case 0xc3: goto dsp_26;
++        case 0xc2: case 0xc3: goto dsp_26;
+         case 0xcf: goto dsp_27;
+         case 0xa0: case 0xa1: case 0xa2: case 0xa3: goto dsp_28;
+         case 0xa8: case 0xa9: goto dsp_29;
+@@ -787,7 +787,7 @@ U32 CPU64::step() {
+         case 0x41: case 0x42: case 0x43: case 0x44: case 0x45: case 0x46: case 0x47: case 0x48: 
+         case 0x49: case 0x4a: case 0x4b: case 0x4c: case 0x4d: case 0x4e: case 0x4f: case 0x60: 
+         case 0x61: case 0x62: case 0x64: case 0x65: case 0x66: case 0x67: case 0x6c: case 0x6d: 
+-        case 0x6e: case 0x6f: case 0x82: case 0x9a: case 0xac: case 0xad: case 0xc2: case 0xc4: 
++        case 0x6e: case 0x6f: case 0x82: case 0x9a: case 0xac: case 0xad: case 0xc4: 
+         case 0xc5: case 0xc8: case 0xca: case 0xcb: case 0xcd: case 0xce: case 0xd4: case 0xd5: 
+         case 0xd6: case 0xe0: case 0xe1: case 0xe2: case 0xe3: case 0xe4: case 0xe5: case 0xe6: 
+         case 0xe7: case 0xea: case 0xec: case 0xed: case 0xee: case 0xef: case 0xf0: case 0xf1: 
+@@ -1344,11 +1344,13 @@ dsp_23:
+         }
+     }
+ 
+-    // RET (C3) — near return, no immediate.
++    // RET (C3) and RET imm16 (C2): pop the return address, then discard arguments.
+ dsp_26:
+-    if (op == 0xC3) {
++    if (op == 0xC3 || op == 0xC2) {
++        U16 discard = op == 0xC2 ? (U16)(fetchByte(rip + opOff + 1) | (fetchByte(rip + opOff + 2) << 8)) : 0;
+         rip = pop64();
+-        return opOff + 1;
++        reg[X64_RSP].setU64(reg[X64_RSP].u64 + discard);
++        return opOff + (op == 0xC2 ? 3 : 1);
+     }
+ 
+     // IRETQ (REX.W CF == 48 CF), and the non-promoted IRET (CF) / IRETD.
+@@ -3907,6 +3909,21 @@ dsp_54:
+             U64 bits; std::memcpy(&bits, &d, sizeof(bits)); return bits;
+         };
+ 
++        // CVTPS2PD xmm, xmm/m64: convert the two low floats to doubles.
++        if (op2 == 0x5A && p.rep == 0 && !osize66) {
++            ModRM m = decodeModRM(rip + opOff + 2, p, 0);
++            U64 bits = m.isReg ? xmm[m.rmIndex].lo : memory->readq(m.effAddr);
++            U32 low = (U32)bits, high = (U32)(bits >> 32);
++            float a, b;
++            std::memcpy(&a, &low, sizeof(a));
++            std::memcpy(&b, &high, sizeof(b));
++            xmm[m.regField].lo = doubleToU64((double)a);
++            xmm[m.regField].hi = doubleToU64((double)b);
++            U32 used = opOff + 2 + m.length;
++            rip += used;
++            return used;
++        }
++
+         // MOVSD xmm, xmm/m64   F2 0F 10 /r   (load low qword; zero high if mem)
+         // MOVSD xmm/m64, xmm   F2 0F 11 /r   (store low qword)
+         if ((op2 == 0x10 || op2 == 0x11) && p.rep == 0xF2) {
+diff --git a/source/emulation/cpu/cpu64SelfTest.cpp b/source/emulation/cpu/cpu64SelfTest.cpp
+index f2519a5..211cdb3 100644
+--- a/source/emulation/cpu/cpu64SelfTest.cpp
++++ b/source/emulation/cpu/cpu64SelfTest.cpp
+@@ -194,6 +194,19 @@ int runX64SelfTest() {
+         });
+     }
+ 
++    // RET imm16 must pop RIP and add the unsigned immediate to RSP.
++    // Cover Blender's RET 0 plus nonzero and high-bit stack adjustment.
++    for (U16 discard : { (U16)0, (U16)16, (U16)0x8000 }) {
++        std::vector<U8> code = {
++            0xEB, 0x03, // jump over return instruction to call
++            0xC2, (U8)discard, (U8)(discard >> 8),
++            0xE8, 0xF8, 0xFF, 0xFF, 0xFF // call offset 2
++        };
++        runAndCheck(r, "ret imm16 stack adjustment", withExit(code), [discard](CPU64& c) {
++            return c.reg[X64_RSP].u64 == STACK_TOP - 16 + discard;
++        });
++    }
++
+     // IRETQ (48 CF). Wine's PE-side ntdll returns from its user-mode exception
+     // dispatcher with iretq. Build a long-mode interrupt frame on the stack
+     // (pushed high-to-low: SS, RSP, RFLAGS, CS, RIP) and execute iretq; it must
+@@ -2450,6 +2463,22 @@ int runX64SelfTest() {
+         });
+     }
+ 
++    // Packed float conversion: {1.5f, -2.25f}, register and memory sources.
++    for (bool fromMemory : {false, true}) {
++        std::vector<U8> code = {
++            0x48, 0xB8, 0x00, 0x00, 0xC0, 0x3F, 0x00, 0x00, 0x10, 0xC0
++        };
++        if (fromMemory) {
++            code.insert(code.end(), {0x50, 0x0F, 0x5A, 0x04, 0x24, 0x58});
++        } else {
++            code.insert(code.end(), {0x66, 0x48, 0x0F, 0x6E, 0xC8, 0x0F, 0x5A, 0xC1});
++        }
++        runAndCheck(r, "cvtps2pd two signed lanes", withExit(code), [](CPU64& c) {
++            return c.xmm[0].lo == 0x3FF8000000000000ULL &&
++                   c.xmm[0].hi == 0xC002000000000000ULL;
++        });
++    }
++
+     // Test 61 — CVTSI2SD with REX.W: int64 42 → double 42.0
+     // 42.0 = 0x4045000000000000
+     {

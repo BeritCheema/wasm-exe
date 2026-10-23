@@ -14,7 +14,9 @@
     "check": "node --check src/index.js && node --check web/app.js && node --check web/backend-bridge.js && node --check scripts/serve.js && node --check scripts/setup-backend.js && node --check scripts/patch-launcher.js && node --check scripts/setup-blender.js",
     "setup:backend": "node scripts/setup-backend.js",
     "setup:backend64": "node scripts/setup-backend.js --64",
-    "setup:blender": "node scripts/setup-blender.js"
+    "setup:blender": "node scripts/setup-blender.js",
+    "build:backend64": "bash scripts/build-backend64.sh",
+    "test:backend64": "bash scripts/test-backend64.sh"
   },
   "engines": {
     "node": ">=22"
