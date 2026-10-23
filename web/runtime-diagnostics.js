@@ -5,6 +5,11 @@
   const recent = [];
   const stages = ['Downloading runtime', 'Application files mounted', 'Starting Wine', 'Starting Windows services', 'Display connected', 'Blender initialization', 'Graphics initialization', 'Loading Blender Python', 'Stopped on runtime error'];
   let lastGuestExecution = null, lastMainExecution = null, activeModule = '';
+  // The upstream shell fills one viewport. Diagnostics need scrollable space
+  // so their height cannot collapse the application's canvas to a thumbnail.
+  const layout = document.createElement('style');
+  layout.textContent = 'html,body{height:auto;min-height:100%;overflow:auto}body{display:block}#dropzone{height:min(70vh,600px);min-height:320px;flex:none}';
+  document.head.append(layout);
   const panel = document.createElement('section');
   panel.style.cssText = 'margin:16px 0;padding:14px;background:#101923;border:1px solid #526478;border-radius:8px;font:14px monospace;color:#e0edf7';
   const title = document.createElement('strong');

@@ -83,4 +83,5 @@ CPU suite. The original Blender EXE remains unchanged.
 
 The browser test now shows elapsed time, startup stages and timestamped events.
 `npm run runtime:status` reads the latest local run log and shows thread activity
-and errors. Full logs are saved under ignored `vendor/runtime-logs/`.
+and errors. Use `npm run runtime:status -- <run-id>` to inspect a particular run.
+Full logs are saved under ignored `vendor/runtime-logs/`.

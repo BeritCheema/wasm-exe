@@ -4,7 +4,9 @@ const files = await readdir(dir).catch(() => []);
 const logs = await Promise.all(files.filter(f => f.endsWith('.jsonl')).map(async name => ({name, time:(await stat(new URL(name, dir))).mtimeMs})));
 logs.sort((a,b) => b.time-a.time);
 if (!logs.length) { console.log('No runtime logs yet. Open a browser test.'); process.exit(0); }
-const latest = logs[0];
+const requested = process.argv[2]?.replace(/\.jsonl$/, '');
+const latest = requested ? logs.find(log => log.name === requested + '.jsonl') : logs[0];
+if (!latest) { console.error('No saved run with that ID.'); process.exit(1); }
 const entries = (await readFile(new URL(latest.name, dir), 'utf8')).trim().split('\n').flatMap(line => { try { return [JSON.parse(line)]; } catch { return []; } });
 const last = entries.at(-1), heartbeat = entries.findLast(e => e.level === 'heartbeat');
 console.log(`Run ${latest.name}\nElapsed ${last.seconds}s · last report ${Math.round((Date.now()-Date.parse(last.at))/1000)}s ago\nStage: ${heartbeat?.text ?? 'starting'}`);
