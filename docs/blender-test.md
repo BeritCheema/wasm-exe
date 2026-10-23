@@ -132,3 +132,11 @@ about 404 seconds. At 410 seconds the upstream legacy GL emulation aborted on
 to `GL_TRIANGLE_FAN`; legacy polygon wireframe and flat-shading provoking-vertex
 semantics remain limitations. The diagnostics layout reserves canvas space and
 scrolls instead of squeezing the canvas below the log panel.
+
+
+Later retests encountered intermittent startup stalls, including archive metadata
+scanning and a Wine client blocked in `connect` while wineserver was in `read`.
+The polygon fix has built successfully but has not yet passed an end-to-end GUI
+test. Blender remains unverified and not ready for normal use. Add
+`&tracepid=14` alongside `&ripsample=1` to trace wineserver system calls; this is
+optional because detailed tracing can change timing and increase overhead.

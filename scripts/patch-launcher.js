@@ -3,7 +3,7 @@
 export function patchLauncher(source) {
   const edits = [
     ['liveModule["ENV"] = liveModule["ENV"] || {};', 'liveModule["ENV"] = typeof ENV !== "undefined" ? ENV : (liveModule["ENV"] || {});'],
-    ['liveModule["ENV"]["BW64_RIPSAMPLE_HB"] = "1";', 'liveModule["ENV"]["BW64_RIPSAMPLE_HB"] = "1"; liveModule["ENV"]["BW64_SHAREMAP"] = "1";'],
+    ['liveModule["ENV"]["BW64_RIPSAMPLE_HB"] = "1";', 'liveModule["ENV"]["BW64_RIPSAMPLE_HB"] = "1"; liveModule["ENV"]["BW64_SHAREMAP"] = "1"; if (/^[0-9]+$/.test(param("tracepid") || "")) liveModule["ENV"]["BW64_TRACEPID"] = param("tracepid");'],
     ['console.log(text);', 'if (window.runtimeDiagnostics) text = window.runtimeDiagnostics.record(text); console.log(text);'],
     ['console.error(text);', 'if (window.runtimeDiagnostics) text = window.runtimeDiagnostics.record(text); console.error(text);'],
     ['var names = [GLIBC_ZIP, WINE_ZIP];', 'var names = [GLIBC_ZIP, WINE_ZIP]; if (param("fixture") === "blender") names.push("blender-2.79b-windows64.zip");'],
