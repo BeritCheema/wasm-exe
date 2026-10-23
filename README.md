@@ -4,7 +4,7 @@ JavaScript package and browser test lab researching local execution of Windows p
 
 ## Current status
 
-**GTA V does not run. General Windows executable execution is not implemented.** This is the first compiler and inspection milestone, not a playable game demo.
+**GTA V does not run.** The custom compiler remains a restricted arithmetic milestone. A separate, optional Boxedwine/Wine backend now supports testing classic 32-bit Windows applications; see [backend setup and test results](docs/external-backend.md).
 
 Implemented:
 - Bounds-checked PE32 / PE32+ header, section and static DLL-import inspection.
@@ -16,7 +16,7 @@ The compiler supports only `MOV EAX, imm32`, `ADD EAX, imm32`, `SUB EAX, imm32`,
 
 ## Develop on macOS
 
-Node.js 22 or newer. No dependency installation required.
+Node.js 22 or newer. No npm dependency installation required. The optional Windows backend downloads approximately 60 MiB of pinned external assets.
 
 ```sh
 npm test
@@ -24,6 +24,15 @@ npm run dev
 ```
 
 Open http://127.0.0.1:5173. Choose an EXE to inspect, or run the CPU probe. The probe translates `mov eax, 40; add eax, 2; ret` and executes the resulting Wasm in the browser, returning 42.
+
+## Run a real Windows application
+
+```sh
+npm run setup:backend
+npm run dev
+```
+
+Open http://127.0.0.1:5173/backend/ and click **Try demo (7-Zip)**. This launches the original Windows file manager through the external Boxedwine/Wine backend. It does not use the custom arithmetic compiler. Files remain local; no game binaries are included.
 
 ## Package API
 
@@ -55,4 +64,4 @@ See [architecture and milestones](docs/architecture.md). A successful arithmetic
 - [GTA V Legacy requirements](https://help.steampowered.com/en/wizard/HelpWithGameTechnicalIssue/?appid=271590)
 - [Boxedwine64](https://github.com/andrewnakas/Boxedwine64): candidate upstream for evaluation; no code or runtime is incorporated here.
 
-No open-source license has been selected yet. Public source visibility alone does not grant reuse rights.
+No license has been selected for the original wasm-exe code yet. Downloaded third-party code retains its own licenses; see [backend provenance](docs/external-backend.md). Public visibility alone does not grant reuse rights to original code.

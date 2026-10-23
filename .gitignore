@@ -7,3 +7,5 @@ dist/
 *.zip
 *.dmg
 *.log
+
+vendor/

@@ -4,7 +4,7 @@
 
 Local game directory → virtual filesystem → PE loader → x86-64 execution engine → Windows API layer → browser GPU/audio/input/storage.
 
-The current source implements PE inspection and a separate tiny arithmetic compiler probe only. Neither is a game loader. Chrome on Apple Silicon cannot directly call guest x86-64 instructions or macOS Rosetta from WebAssembly.
+The current source implements PE inspection and a separate tiny arithmetic compiler probe only. Neither is a game loader. An optional, separately downloaded Boxedwine/Wine backend is now integrated for classic 32-bit app testing; this is not the x86-64 engine required for GTA V. Chrome on Apple Silicon cannot directly call guest x86-64 instructions or macOS Rosetta from WebAssembly.
 
 ## Next milestones and acceptance criteria
 
