@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>wasm-exe · Runtime lab</title><link rel="stylesheet" href="/web/style.css"></head>
+<body><main><nav><strong>wasm-exe<span> / runtime lab</span></strong><a href="https://github.com/BeritCheema/wasm-exe">Source ↗</a></nav>
+<p class="eyebrow">EXPERIMENT 001 · GTA V LEGACY</p><h1>Windows code.<br>A browser frontier.</h1><p class="intro">Building toward GTA V Story Mode in Chrome. Start by inspecting your Windows executable, or run the first CPU translation probe.</p>
+<div class="status"><span class="dot"></span> Research preview · GTA V execution is not implemented</div>
+<section class="grid"><article><div class="step">01 / INSPECT</div><h2>Bring your executable.</h2><p>Read its architecture, sections and imported libraries. Files stay on this device.</p><label class="button" for="exe">Choose .exe</label><input id="exe" type="file" accept=".exe,.dll"><p class="note">Up to 256 MiB for this inspector. Game assets are not loaded.</p></article>
+<article><div class="step">02 / EXECUTE A PROBE</div><h2>A small, real first step.</h2><p>Translate a tiny x86-64 arithmetic function into WebAssembly and execute it here.</p><button id="probe">Run CPU probe →</button><p class="note">MOV + ADD + RET · expected result: 42</p></article></section>
+<section class="output"><div class="output-heading"><h2>Session output</h2><button id="download" disabled>Export report</button></div><pre id="output" role="status" aria-live="polite">Ready. Choose a file or run the probe.</pre></section>
+<footer>Next: PE loading → CPU coverage → Windows APIs → DirectX 11 → GTA V validation</footer></main><script type="module" src="/web/app.js"></script></body></html>

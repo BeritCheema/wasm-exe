@@ -1,0 +1,10 @@
+{
+  "name": "wasm-exe",
+  "version": "0.0.1",
+  "description": "Experimental Windows executable tooling and WebAssembly runtime research targeting GTA V Legacy Story Mode",
+  "type": "module",
+  "exports": "./src/index.js",
+  "files": ["src", "README.md"],
+  "scripts": { "test": "node --test", "dev": "node scripts/serve.js", "check": "node --check src/index.js && node --check web/app.js" },
+  "engines": { "node": ">=22" }
+}
