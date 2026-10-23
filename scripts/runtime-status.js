@@ -13,4 +13,4 @@ for (const e of errors.slice(-3)) console.log(`ERROR [${e.seconds}s] ${e.text}`)
 const threads = new Map();
 for (const e of entries) { const match = /RIPSAMPLE HB slot=\d+ pid=(\d+) tid=(\d+)/.exec(e.text); if (match) threads.set(`${match[1]}:${match[2]}`, e); }
 for (const e of [...threads.values()].filter(e => last.seconds-e.seconds < 10)) console.log(`[${e.seconds}s] ${e.text}`);
-for (const e of entries.filter(e => e.level !== 'heartbeat' && e.text.trim() && !/RIPSAMPLE|sys_openat64|loadProgram64/.test(e.text)).slice(-6)) console.log(`[${e.seconds}s] ${e.text}`);
+for (const e of entries.filter(e => e.level !== 'heartbeat' && e.text.trim() && !/RIPSAMPLE|KUSER clock:|sys_openat64|loadProgram64/.test(e.text)).slice(-6)) console.log(`[${e.seconds}s] ${e.text}`);

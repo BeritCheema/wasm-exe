@@ -3,7 +3,7 @@
   const run = crypto.randomUUID();
   let lastOutput = started, lastProgress = started, stage = 'Downloading runtime', failure = '', queue = [], busy = false;
   const recent = [];
-  const stages = ['Downloading runtime', 'Application files mounted', 'Starting Wine', 'Starting Windows services', 'Display connected', 'Blender initialization', 'Graphics initialization', 'Stopped on runtime error'];
+  const stages = ['Downloading runtime', 'Application files mounted', 'Starting Wine', 'Starting Windows services', 'Display connected', 'Blender initialization', 'Graphics initialization', 'Loading Blender Python', 'Stopped on runtime error'];
   let lastGuestExecution = null;
   const panel = document.createElement('section');
   panel.style.cssText = 'margin:16px 0;padding:14px;background:#101923;border:1px solid #526478;border-radius:8px;font:14px monospace;color:#e0edf7';
@@ -17,7 +17,7 @@
   function record(text, level = 'runtime') {
     text = String(text).slice(0, 16000);
     const now = performance.now();
-    if (level === 'runtime' && !text.startsWith('RIPSAMPLE')) lastOutput = now;
+    if (level === 'runtime' && !/^(RIPSAMPLE|KUSER clock:)/.test(text)) lastOutput = now;
     const sample = /RIPSAMPLE HB .*dIns=(\d+)/.exec(text);
     if (sample && Number(sample[1]) > 0) lastGuestExecution = now;
     let next;
@@ -27,6 +27,7 @@
     if (/XWire: handshake complete/.test(text)) next = 'Display connected';
     if (/\.thumbnails|Blender 2\.|found bundled python|Read prefs/.test(text)) next = 'Blender initialization';
     if (/gl64.*(context|host GL up)|GL_VENDOR/i.test(text)) next = 'Graphics initialization';
+    if (/found bundled python/.test(text)) next = 'Loading Blender Python';
     if (/unimpl opcode|RuntimeError|Aborted\(|Boot failed|Exception:/.test(text)) {
       failure = text; next = 'Stopped on runtime error';
     }

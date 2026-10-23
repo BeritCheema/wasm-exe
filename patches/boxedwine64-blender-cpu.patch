@@ -76,7 +76,7 @@ index 6dbfbec..bcc6e27 100644
          // MOVSD xmm/m64, xmm   F2 0F 11 /r   (store low qword)
          if ((op2 == 0x10 || op2 == 0x11) && p.rep == 0xF2) {
 diff --git a/source/emulation/cpu/cpu64SelfTest.cpp b/source/emulation/cpu/cpu64SelfTest.cpp
-index f2519a5..f3a9a2c 100644
+index f2519a5..6861166 100644
 --- a/source/emulation/cpu/cpu64SelfTest.cpp
 +++ b/source/emulation/cpu/cpu64SelfTest.cpp
 @@ -194,6 +194,19 @@ int runX64SelfTest() {
@@ -135,6 +135,82 @@ index f2519a5..f3a9a2c 100644
      // Test 61 — CVTSI2SD with REX.W: int64 42 → double 42.0
      // 42.0 = 0x4045000000000000
      {
+@@ -3462,6 +3504,37 @@ int runX64SelfTest() {
+         });
+     }
+ 
++    // Wine maps the writer with a NULL address, then clients at a fixed
++    // address. The writer's pre-reserved pages must still share live data.
++    {
++        KMemory64 writer(nullptr), reader(nullptr);
++        const char* path = "/tmp/wine/server-1-selftest/tmpmap-clock";
++        U8 seed[4096] = {};
++        U64 picked = writer.mmapReserveAndMap(4096, 3);
++        writer.mmapSharedFile(picked, 4096, 3, path, 0, seed, sizeof(seed));
++        reader.mmapSharedFile(0x7ffe0000, 4096, 1, path, 0, seed, sizeof(seed));
++        writer.writed(picked + 0x324, 2);
++        writer.writed(picked + 0x320, 1234);
++        writer.writed(picked + 0x328, 2);
++        bool ok = reader.readd(0x7ffe0324) == 2 && reader.readd(0x7ffe0328) == 2 &&
++                  reader.readd(0x7ffe0320) == 1234;
++        printf("  %s: reserved shared-file writer updates fixed reader clock\n", ok ? "PASS" : "FAIL");
++        if (ok) r.passed++; else r.failed++;
++        reader.mmapAnonymousFixed(CODE_BASE, 4096, 7);
++        std::vector<U8> clockCode = {
++            0x8B, 0x04, 0x25, 0x24, 0x03, 0xFE, 0x7F,
++            0x8B, 0x0C, 0x25, 0x20, 0x03, 0xFE, 0x7F,
++            0x8B, 0x14, 0x25, 0x28, 0x03, 0xFE, 0x7F,
++            0x39, 0xD0, 0x75, 0xE7, 0x48, 0xC1, 0xE0, 0x20, 0x48, 0x09, 0xC8
++        }; // Wine GetTickCount64's stable high/low/high read loop.
++        loadCode(reader, CODE_BASE, withExit(clockCode));
++        CPU64 clockCPU(&reader); clockCPU.rip = CODE_BASE;
++        clockCPU.runBounded(1000);
++        ok = clockCPU.reg[X64_R15].u64 == ((2ULL << 32) | 1234);
++        printf("  %s: Wine GetTickCount64 read loop terminates with shared clock\n", ok ? "PASS" : "FAIL");
++        if (ok) r.passed++; else r.failed++;
++    }
++
+     // ---- mmap(9) NULL-hint allocator: single monotonic bump ----
+     //
+     // Regression guard for the multi-DSO Verneed bug. sys_mmap64 (anonymous)
+diff --git a/source/emulation/cpu/normal/ripSampler.cpp b/source/emulation/cpu/normal/ripSampler.cpp
+index 35a83de..1064c5a 100644
+--- a/source/emulation/cpu/normal/ripSampler.cpp
++++ b/source/emulation/cpu/normal/ripSampler.cpp
+@@ -18,6 +18,7 @@
+ 
+ #include "ripSampler.h"
+ #include "cpu64.h"
++#include "kmemory64.h"
+ #include "ksystem.h"
+ 
+ #include <atomic>
+@@ -160,6 +161,11 @@ static void ripSamplerLoop() {
+             U64 dIns = ic - L.icount;
+ 
+             if (emitHb) {
++                if (i == 0 && c->memory && c->memory->isPageMapped(0x7ffe0)) {
++                    klog_fmt("KUSER clock: low=%u high1=%u high2=%u flags=0x%x",
++                        c->memory->readd(0x7ffe0320), c->memory->readd(0x7ffe0324),
++                        c->memory->readd(0x7ffe0328), c->memory->getPageFlags(0x7ffe0));
++                }
+                 std::string hbBase; U64 hbOff = 0;
+                 bool res = ripSamplerResolve(g_slots[i].pid, rip, hbBase, hbOff);
+                 klog_fmt("RIPSAMPLE HB slot=%d pid=%d tid=%d dIns=%llu rip=0x%llx %s%s0x%llx",
+diff --git a/source/kernel/syscall64.cpp b/source/kernel/syscall64.cpp
+index 242debc..99fb55b 100644
+--- a/source/kernel/syscall64.cpp
++++ b/source/kernel/syscall64.cpp
+@@ -1455,7 +1455,8 @@ static U64 sys_mmap64_file(CPU64* cpu, U64 addr, U64 length, U64 prot,
+             serverSection = true;
+         }
+     }
+-    if (serverSection && (flags & K_MAP_SHARED) && kfile->openFile->node && !reserved) {
++    // NULL-hint reservations must alias too: wineserver is the writer.
++    if (serverSection && (flags & K_MAP_SHARED) && kfile->openFile->node) {
+         // Seed bytes for any page of this file not yet in the registry.
+         std::vector<U8> seedBuf((size_t)mapLen, 0);
+         U64 fileBase = offset & ~0xFFFULL;
 diff --git a/source/opengl/gl64bridge.cpp b/source/opengl/gl64bridge.cpp
 index 33d27b0..93818f6 100644
 --- a/source/opengl/gl64bridge.cpp

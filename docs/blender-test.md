@@ -71,7 +71,7 @@ unsigned 16-bit stack adjustment. Tests cover zero, 16, and 32768 bytes.
 The next browser run passed that point and reported `0F 5A C1` (CVTPS2PD)
 at `0x1429538bd`. The patch now also converts the low two float lanes to
 doubles, with register and memory source tests.
-The rebuilt CPU self-test reports **241 passed, 0 failed**. This alone does not
+The rebuilt CPU self-test reports **243 passed, 0 failed**. This alone does not
 establish Blender compatibility; browser testing is ongoing.
 
 To reproduce the runtime build, activate Emscripten **4.0.23**, then run
@@ -103,3 +103,14 @@ This follows Blender 2.79b's `GPU_basic_shader_light_set` initialization path.
 Some reloads after a runtime abort stalled during archive scanning. Until the
 cause is resolved, close the failed test tab and open a fresh test tab. Archive
 metadata checks now report the exact ZIP being scanned.
+
+
+Thread samples then located a prolonged loop in Wine's `GetTickCount64` at
+`kernel32.dll` address `0x7b625a70`. The shared-file mmap path excluded mappings
+with an automatically chosen address, so a wineserver writer could get private
+pages while clients expected a live shared clock. The patch removes that
+exclusion. Tests verify visibility from a pre-reserved writer to a fixed reader
+and execute Wine's high/low/high clock-reading sequence. The browser now shows the writer and reader aliasing the same shared page,
+consistent clock words, and Blender moving beyond the clock loop into Python
+initialization. The Blender UI is not yet verified. Trace mode includes the
+shared clock words, excluded from the application-output inactivity timer.
